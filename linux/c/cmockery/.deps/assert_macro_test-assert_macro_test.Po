@@ -1,0 +1,28 @@
+assert_macro_test-assert_macro_test.o: src/example/assert_macro_test.c \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/lib/gcc/arm-hisiv500-linux-uclibcgnueabi/4.9.4/include/stdarg.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/lib/gcc/arm-hisiv500-linux-uclibcgnueabi/4.9.4/include/stddef.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/setjmp.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/features.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/bits/uClibc_config.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/sys/cdefs.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/bits/setjmp.h \
+ /opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/bits/sigset.h \
+ src/google/cmockery.h
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/lib/gcc/arm-hisiv500-linux-uclibcgnueabi/4.9.4/include/stdarg.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/lib/gcc/arm-hisiv500-linux-uclibcgnueabi/4.9.4/include/stddef.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/setjmp.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/features.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/bits/uClibc_config.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/sys/cdefs.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/bits/setjmp.h:
+
+/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/usr/include/bits/sigset.h:
+
+src/google/cmockery.h:

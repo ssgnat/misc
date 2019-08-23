@@ -142,6 +142,8 @@ rebuild: clean all
 
 clean :
 	@$(RM) *.o *.d
+	@$(RM) $(OBJS) $(DEPS)
+	@$(RM) $(PROGRAM) $(PROGRAM).exe
 
 cleanall: clean
 	@$(RM) $(PROGRAM) $(PROGRAM).exe
