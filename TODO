@@ -1,0 +1,3 @@
+test:
+system/system_call.c
+sanity/check.c
