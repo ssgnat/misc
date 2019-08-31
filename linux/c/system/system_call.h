@@ -7,6 +7,8 @@
 #define _SYSTEM_CALL_H_
 
 #include <stdio.h>
+
+#define MAX_RESULT_BUFFER 10240
 #ifdef __cplusplus
 extern "C"{
 #endif
