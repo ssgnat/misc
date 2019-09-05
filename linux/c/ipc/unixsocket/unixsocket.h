@@ -9,9 +9,8 @@
 
 
 //unix server
-typedef int (*unixsock_server_receiver)(int client_fd,
-        const char *clientpath, const char *request_buffer,
-        int *request_buffer_len);
+typedef int (*unixsock_server_receiver)(int client_fd, const char *clientpath,
+        const char *request_buffer, int *request_buffer_len);
 
 /*
  *@brief: open and bind, listen unix_path

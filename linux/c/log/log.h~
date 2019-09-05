@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 
-#ifndef DEBUG
+#ifdef DEBUG
 
     #ifndef LOGI
     #define LOGI(fmt, args...)              \

@@ -14,7 +14,7 @@ exec(const char *command, char *with_result, int *with_result_len)
 
     char  read_buf[MAX_RESULT_BUFFER]={0};
 
-    CHECK_EMPTY_OF_STRING(command);
+    CHECK_EMPTY_OF_STRING(command, -1);
 
     max_result = *with_result_len;
 
@@ -63,7 +63,7 @@ exec_noredirect(const char *command, char *with_result, int *with_result_len)
 
     char  read_buf[MAX_RESULT_BUFFER]={0};
 
-    CHECK_EMPTY_OF_STRING(command);
+    CHECK_EMPTY_OF_STRING(command, -1);
 
     max_result = *with_result_len;
 
