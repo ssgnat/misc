@@ -4,6 +4,7 @@
 #include <sys/types.h>
 
 /*
+ * portable from linux kernel 
  * Simple doubly linked list implementation.
  *
  * Some of the internal functions ("__xxx") are useful when
@@ -12,6 +13,11 @@
  * generate better code by using them directly rather than
  * using the generic single-entry routines.
  */
+
+#define bool int
+
+#define LIST_POISON1  ((void *) 0x00100100)
+#define LIST_POISON2  ((void *) 0x00200200)
 
 #ifndef WRITE_ONCE
 #define WRITE_ONCE(var, val) \
@@ -22,6 +28,20 @@
 
 #define LIST_HEAD(name) \
 	struct list_head name = LIST_HEAD_INIT(name)
+
+struct list_head {
+    struct list_head *next, *prev;
+};
+
+
+
+struct hlist_head {
+    struct hlist_node *first;
+};
+
+struct hlist_node {
+    struct hlist_node *next, **pprev;
+};
 
 static inline void
 INIT_LIST_HEAD(struct list_head *list)
