@@ -1,10 +1,11 @@
 #ifndef _LIST_H_
-#define _LIST_H_ 
+#define _LIST_H_
 
 #include <sys/types.h>
 
+
 /*
- * portable from linux kernel 
+ * portable from linux kernel
  * Simple doubly linked list implementation.
  *
  * Some of the internal functions ("__xxx") are useful when
@@ -19,6 +20,14 @@
 #define LIST_POISON1  ((void *) 0x00100100)
 #define LIST_POISON2  ((void *) 0x00200200)
 
+
+#define container_of(ptr, type, member) \
+        ((long)ptr - (long)(&(((type*)0)->member)))
+
+#ifndef READ_ONCE
+#define READ_ONCE(var) \
+    (var)
+#endif
 #ifndef WRITE_ONCE
 #define WRITE_ONCE(var, val) \
     (*((volatile typeof(val) *)(&(var))) = (val))

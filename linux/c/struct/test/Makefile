@@ -125,13 +125,12 @@ objs : $(OBJS)
 # Rules for producing the executable.
 #----------------------------------------------
 $(PROGRAM) : $(OBJS)
-		make clean
 ifeq ($(strip $(SRCEXTS)), .c) # C file
 	$(warning "OBJS" $(OBJS))
 	$(CC) -o $(PROGRAM) $(OBJS) $(LDFLAGS)
 	$(STRIP) $(PROGRAM)
 	cp $(PROGRAM) ~/tmp/ -rf
-	$(PROGRAM)
+	./$(PROGRAM)
 else # C++ file
 	$(CXX) -o $(PROGRAM) $(OBJS) $(LDFLAGS)
 endif
