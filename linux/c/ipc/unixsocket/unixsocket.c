@@ -352,7 +352,7 @@ unixsocket_client_connect(const char *unix_path, const char *clientid)
     LOGI("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
     memset(&un, 0, sizeof(un));
     un.sun_family = AF_UNIX;
-    sprintf(un.sun_path, "%s%s", unix_path, clientid);
+    sprintf(un.sun_path, "%s_%s", unix_path, clientid);
     len = offsetof(struct sockaddr_un, sun_path) + strlen(un.sun_path);
 
     LOGI("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
