@@ -4,4 +4,5 @@ sanity/check.c
 
 
 copy the kernel data struct and algorithm
-list.h
+list.h .. [testing...
+
