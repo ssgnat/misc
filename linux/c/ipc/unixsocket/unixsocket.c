@@ -12,7 +12,7 @@
 #include "unixsocket.h"
 
 
-#define MAX_CONNECTION_NUMBER   10
+#define MAX_CONNECTIONS         10
 #define MAX_BUFFER_LEN          64
 #define MAX_UNIX_PATH_LEN       64
 
@@ -21,19 +21,17 @@
 #define SRV_PERM                S_IRWXU
 
 #ifdef DEBUG
-#define LOGD            printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__)
+#define LOGD()          printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__)
 #define LOGI(fmt, ...)  printf(fmt, __VA_ARGS__)
 #else
-#define LOGD
+#define LOGD()
 #define LOGI(fmt, ...)
 #endif
-
-static int  quit_flag = 0;
-pthread_t   tid = 0;
 
 typedef struct {
     char                        unix_path[MAX_UNIX_PATH_LEN];
     unixsock_server_receiver    unix_receiver;
+    request_proto_t            *proto;
 } unixsock_server_info_t;
 
 typedef struct {
@@ -41,15 +39,18 @@ typedef struct {
     char    unix_path[MAX_UNIX_PATH_LEN];
 } unixsock_client_address_t;
 
+static int          quit_flag = 0;
+static pthread_t    tid = 0;
+
 /* * Create a server endpoint of a connection. * Returns fd if all OK,
  * <0 on error. */
-int
+static int
 unix_socket_listen(const char *servername)
 {
     int     fd, ret, len, rval, err;
     struct  sockaddr_un un;
 
-    LOGI("%s %s %d \n", __FILE__, __FUNCTION__, __LINE__);
+    LOGD();
     if ((fd = socket(AF_UNIX, SOCK_STREAM, 0)) < 0) {
         return fd;
     }
@@ -58,7 +59,7 @@ unix_socket_listen(const char *servername)
     if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &ret, sizeof(ret)) < 0) {
     }
 
-    LOGI("%s %s %d \n", __FILE__, __FUNCTION__, __LINE__);
+    LOGD();
     len = sizeof(un);
     memset(&un, 0, sizeof(un));
     un.sun_family = AF_UNIX;
@@ -68,19 +69,19 @@ unix_socket_listen(const char *servername)
     LOGI("%s %s %d sun_path:%s\n", __FILE__, __FUNCTION__, __LINE__,
             un.sun_path);
     unlink(un.sun_path);
-    LOGD;
+    LOGD();
     if ((ret = bind(fd, (struct sockaddr *)&un, len)) < 0) {
             LOGI("%s %s %d bind errno:%d\n", __FILE__, __FUNCTION__,
                     __LINE__, errno);
     } else {
 
-    LOGD;
+    LOGD();
         if ((ret = chmod(un.sun_path, SRV_PERM)) <  0) {
             LOGI("%s %s %d chmod errno:%d\n", __FILE__, __FUNCTION__,
                     __LINE__, errno);
         } else {
 
-            if ((ret = listen(fd, MAX_CONNECTION_NUMBER)) < 0) {
+            if ((ret = listen(fd, MAX_CONNECTIONS)) < 0) {
                 LOGI("%s %s %d listen errno:%d\n", __FILE__, __FUNCTION__,
                         __LINE__, errno);
             } else {
@@ -90,7 +91,7 @@ unix_socket_listen(const char *servername)
         }
     }
 
-    LOGI("%s %s %d \n", __FILE__, __FUNCTION__, __LINE__);
+    LOGD();
     err = errno;
     close(fd);
     errno = err;
@@ -98,11 +99,12 @@ unix_socket_listen(const char *servername)
     return ret;
 }
 
-int
-unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
+static int
+unix_socket_accept(int listenfd, unixsock_server_receiver receiver,
+         request_proto_t *proto)
 {
-    LOGD;
-    int     rval, err, maxfd, i, len;
+    LOGD();
+    int     rval, err, maxfd, i, j, len;
     char    fd_[MAX_BUFFER_LEN];
     char    buffer[MAX_BUFFER_LEN];
     fd_set  fdsr;
@@ -110,9 +112,9 @@ unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
     struct sockaddr_un  un;
     struct timeval      tv;
 
-    unixsock_client_address_t ucas[MAX_CONNECTION_NUMBER];
+    unixsock_client_address_t ucas[MAX_CONNECTIONS];
 
-    memset(&ucas, 0, sizeof(unixsock_client_address_t) * MAX_CONNECTION_NUMBER);
+    memset(&ucas, 0, sizeof(unixsock_client_address_t) * MAX_CONNECTIONS);
 
     rval = -2;
 
@@ -125,11 +127,11 @@ unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
         tv.tv_sec  = 0;
         tv.tv_usec = 200000;
 
-        for (i = 0; i < MAX_CONNECTION_NUMBER; i++) {
+        for (i = 0; i < MAX_CONNECTIONS; i++) {
             if (ucas[i].fd != 0) {
                 FD_SET(ucas[i].fd, &fdsr);
                 if (ucas[i].fd >= maxfd) {
-                    LOGD;
+                    LOGD();
                     maxfd = ucas[i].fd + 1;
                 }
             }
@@ -151,10 +153,10 @@ unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
 
         }
 
-        for (i = 0; i < MAX_CONNECTION_NUMBER; i++) {
+        for (i = 0; i < MAX_CONNECTIONS; i++) {
             if (FD_ISSET(ucas[i].fd, &fdsr)) {
                 memset(buffer, 0, sizeof(buffer));
-                rval = recv(ucas[i].fd, buffer, sizeof(buffer), 0);
+                rval = recv(ucas[i].fd, buffer, sizeof(buffer), MSG_PEEK);
                 if (rval <= 0) {
                     close(ucas[i].fd);
                     FD_CLR(ucas[i].fd, &fdsr);
@@ -166,8 +168,34 @@ unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
                     LOGI("%s %s %d content %s from fd:%d fun:%p\n", __FILE__,
                             __FUNCTION__, __LINE__, buffer, ucas[i].fd,
                             receiver);
-                    rval = receiver(ucas[i].fd, ucas[i].unix_path, buffer,
+
+                    if (proto == NULL) {
+                        rval = recv(ucas[i].fd, buffer, rval, 0);
+                        rval = receiver(ucas[i].fd, ucas[i].unix_path, buffer,
                            &rval);
+                    } else {
+
+                       if (rval <= proto->start_len + proto->end_len ) {
+                           continue;
+                       } else {
+                            if (memcmp(buffer, proto->start,
+                                   proto->start_len)) {
+                                rval = recv(ucas[i].fd, buffer, 1, 0);
+                            } else {
+                               for (j = 1; j < rval; j++) {
+                                    if (!memcmp(buffer + j, proto->end,
+                                        proto->end_len)) {
+                                        rval = recv(ucas[i].fd, buffer, j+1, 0);
+                                        rval = receiver(ucas[i].fd,
+                                            ucas[i].unix_path, buffer+1, &rval);
+                                        break;
+                                    } else {
+                                    }
+                               }
+
+                            }
+                       }
+                    }
                 }
             }
         }
@@ -185,7 +213,7 @@ unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
             LOGI("%s %s %d addr:%s rval:%d\n", __FILE__, __FUNCTION__,
                     __LINE__, un.sun_path, rval);
 
-            for (i = 0; i < MAX_CONNECTION_NUMBER; i++) {
+            for (i = 0; i < MAX_CONNECTIONS; i++) {
                 if (ucas[i].fd == 0) {
 
                     ucas[i].fd = rval;
@@ -200,16 +228,14 @@ unix_socket_accept(int listenfd, unixsock_server_receiver receiver)
             }
 
 
-LOGD;
-           if (i >= MAX_CONNECTION_NUMBER) {
+           if (i >= MAX_CONNECTIONS) {
                send(rval,"bye",4,0);
                close(rval);
            }
-LOGD;
         }
     }
 
-    for(i = 0; i < MAX_CONNECTION_NUMBER; i++) {
+    for(i = 0; i < MAX_CONNECTIONS; i++) {
             if (ucas[i].fd != 0) {
                 close(ucas[i].fd);
                 ucas[i].fd = 0;
@@ -225,18 +251,14 @@ LOGD;
 }
 
 
-void *
+static void *
 unixsocket_server_func(void *argv)
 {
     int ret = 0;
 
-    unixsock_server_info_t    p;
     unixsock_server_info_t   *pval = (unixsock_server_info_t *) argv;
 
-    strcpy(p.unix_path, pval->unix_path);
-    p.unix_receiver = pval->unix_receiver;
-
-    ret = unix_socket_listen(p.unix_path);
+    ret = unix_socket_listen(pval->unix_path);
 
     if (ret <= 0) {
         LOGI("%s %s %d error:%d\n", __FILE__, __FUNCTION__, __LINE__, errno);
@@ -246,9 +268,12 @@ unixsocket_server_func(void *argv)
         return NULL;
     }
 
-    LOGD;
-    ret = unix_socket_accept(ret, p.unix_receiver);
-    LOGD;
+    ret = unix_socket_accept(ret, pval->unix_receiver, pval->proto);
+
+    if (pval->proto != NULL) {
+        free(pval->proto);
+    }
+    free(pval);
 
     pthread_exit((void *) argv);
 
@@ -269,19 +294,37 @@ unixsocket_server_start(const char *unix_path,
 {
     int rval = 0;
 
+    rval = unixsocket_server_start_with_proto(unix_path, NULL, receiver);
+
+    return rval;
+}
+
+
+int
+unixsocket_server_start_with_proto(const char *unix_path,
+        request_proto_t *proto, unixsock_server_receiver receiver)
+{
+    int rval = 0;
+
     unixsock_server_info_t *t = NULL;
 
+    if (tid > 0) {
+        return 0;
+    }
     t = (unixsock_server_info_t *)malloc(sizeof(unixsock_server_info_t));
+    memset(t, 0, sizeof(unixsock_server_info_t));
     strcpy(t->unix_path, unix_path);
     t->unix_receiver = receiver;
+    if (proto != NULL) {
+        t->proto = (request_proto_t*)malloc(sizeof(request_proto_t));
+        memmove(t->proto, proto, sizeof(request_proto_t));
+    }
 
     quit_flag = 0;
     rval = pthread_create(&tid, NULL, unixsocket_server_func, t);
 
     return rval;
 }
-
-
 
  /*
   * @brief: stop unix socket listening loop, and quit.
@@ -333,8 +376,8 @@ unixsocket_client_connect(const char *unix_path, const char *clientid)
     err = 0;
     ret = 0;
 
-    fd = -1;
-    rval = 0;
+    fd      = -1;
+    rval    = 0;
 
     LOGI("%s %s %d unix_path:%s clientid:%s\n", __FILE__, __FUNCTION__,
             __LINE__, unix_path, clientid);
@@ -345,17 +388,16 @@ unixsocket_client_connect(const char *unix_path, const char *clientid)
         return -1;
     }
 
-    ret = 0;
     if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &ret, sizeof(ret)) < 0) {
     }
 
-    LOGI("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
+    LOGD();
     memset(&un, 0, sizeof(un));
     un.sun_family = AF_UNIX;
     sprintf(un.sun_path, "%s_%s", unix_path, clientid);
     len = offsetof(struct sockaddr_un, sun_path) + strlen(un.sun_path);
 
-    LOGI("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
+    LOGD();
     unlink(un.sun_path);
     ret = bind(fd, (struct sockaddr *)&un, len);
     if (ret) {
@@ -381,7 +423,7 @@ unixsocket_client_connect(const char *unix_path, const char *clientid)
         goto failed;
     }
 
-    LOGI("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
+    LOGD();
 
 done:
     return fd;
@@ -423,11 +465,11 @@ unixsocket_client_recv(int sockfd, char *recv_buffer,
 
     //len = recv(sockfd, recv_buffer, *recv_buffer_len, 0);
     len = recv(sockfd, recv_buffer, recv_buffer_len, 0);
-    LOGD;
+    LOGD();
     if (len == -1) {
         LOGI("recv error, errno:%d\n", errno);
     } else {
-       LOGI("recv successfully len:%d\n", (int)len);
+        LOGI("recv successfully len:%d\n", (int)len);
     }
 
     return len;

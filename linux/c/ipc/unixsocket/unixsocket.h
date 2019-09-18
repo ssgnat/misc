@@ -7,8 +7,13 @@
 #ifndef _UNIXSOCKET_H_
 #define _UNIXSOCKET_H_
 
+typedef struct {
+    char start[4];
+    int  start_len;
+    char end[4];
+    int  end_len;
+} request_proto_t;
 
-//unix server
 typedef int (*unixsock_server_receiver)(int client_fd, const char *clientpath,
         const char *request_buffer, int *request_buffer_len);
 
@@ -22,8 +27,9 @@ typedef int (*unixsock_server_receiver)(int client_fd, const char *clientpath,
  */
 int unixsocket_server_start(const char *unix_path,
     unixsock_server_receiver receiver);
+int unixsocket_server_start_with_proto(const char *unix_path,
+        request_proto_t *proto, unixsock_server_receiver receiver);
 int unixsocket_server_stop(void);
-
 
 //unix client
 int unixsocket_client_connect(const char *unix_path, const char *clientid);
