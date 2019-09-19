@@ -1,0 +1,9 @@
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/install/strip.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/install/local.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/install.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/package.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/package_source.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/json-c.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/rebuild_cache.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/edit_cache.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/list_install_components.dir

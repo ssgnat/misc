@@ -1,0 +1,1 @@
+/usr/bin/gcc    CMakeFiles/jshn.dir/jshn.c.o  -o jshn  -L/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib -Wl,-rpath,/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib: ../../bin/lib/libjson-c.so 

@@ -1,0 +1,19 @@
+/********************************************************************/
+                郑重声明
+hzbus基于ubus项目修改而成，用于更好的使用与horzon项目。关于ubus项目编译出的进程名改成了hzbus,hzbusd。
+在此对版权说明：
+hzbus没有对ubus项目代码做任何修改，版权属于LGPL协议的ubus(openwrt)。
+本文没有修改ubus部分，发布以bin以及库的方式发布，不以源码方式发布。
+conduit项目是horzon基于ubus开发的通讯封装，闭源。
+/********************************************************************/
+
+cd build
+make clean
+make
+cd ../ubus_conduit
+adb push test_server_debug  /system/bin/
+adb push libconduit_client.so /system/lib/
+adb push libconduit_srv.so /system/lib/
+adb push test_client_debug  /system/bin/
+
+

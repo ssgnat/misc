@@ -1,0 +1,1 @@
+/usr/bin/gcc -fPIC   -shared -Wl,-soname,libblobmsg_json.so -o libblobmsg_json.so CMakeFiles/blobmsg_json.dir/blobmsg_json.c.o  -L/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib -Wl,-rpath,/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox:/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib: libubox.so ../../bin/lib/libjson-c.so -lm 

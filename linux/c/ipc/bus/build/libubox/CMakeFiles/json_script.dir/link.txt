@@ -1,0 +1,1 @@
+/usr/bin/gcc -fPIC   -shared -Wl,-soname,libjson_script.so -o libjson_script.so CMakeFiles/json_script.dir/json_script.c.o  -L/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib -Wl,-rpath,/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox:/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib: libubox.so 

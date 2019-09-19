@@ -1,0 +1,122 @@
+Determining if the include file xlocale.h exists failed with the following output:
+Change Dir: /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9d795/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9d795.dir/build.make CMakeFiles/cmTC_9d795.dir/build
+make[1]: Entering directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9d795.dir/CheckIncludeFile.c.o
+/usr/bin/gcc -D_GNU_SOURCE   -o CMakeFiles/cmTC_9d795.dir/CheckIncludeFile.c.o   -c /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: xlocale.h: No such file or directory
+ #include <xlocale.h>
+          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_9d795.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9d795.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9d795.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9d795/fast' failed
+make: *** [cmTC_9d795/fast] Error 2
+
+
+Determining if the _isnan exist failed with the following output:
+Change Dir: /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a012c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a012c.dir/build.make CMakeFiles/cmTC_a012c.dir/build
+make[1]: Entering directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a012c.dir/CheckSymbolExists.c.o
+/usr/bin/gcc -D_GNU_SOURCE   -o CMakeFiles/cmTC_a012c.dir/CheckSymbolExists.c.o   -c /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_isnan’ undeclared (first use in this function)
+   return ((int*)(&_isnan))[argc];
+                   ^~~~~~
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_a012c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a012c.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a012c.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a012c/fast' failed
+make: *** [cmTC_a012c/fast] Error 2
+
+File /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _isnan
+  return ((int*)(&_isnan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _finite exist failed with the following output:
+Change Dir: /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d62bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d62bb.dir/build.make CMakeFiles/cmTC_d62bb.dir/build
+make[1]: Entering directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d62bb.dir/CheckSymbolExists.c.o
+/usr/bin/gcc -D_GNU_SOURCE   -o CMakeFiles/cmTC_d62bb.dir/CheckSymbolExists.c.o   -c /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_finite’ undeclared (first use in this function)
+   return ((int*)(&_finite))[argc];
+                   ^~~~~~~
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_d62bb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d62bb.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d62bb.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d62bb/fast' failed
+make: *** [cmTC_d62bb/fast] Error 2
+
+File /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _finite
+  return ((int*)(&_finite))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _doprnt exist failed with the following output:
+Change Dir: /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1bca6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1bca6.dir/build.make CMakeFiles/cmTC_1bca6.dir/build
+make[1]: Entering directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1bca6.dir/CheckSymbolExists.c.o
+/usr/bin/gcc -D_GNU_SOURCE   -o CMakeFiles/cmTC_1bca6.dir/CheckSymbolExists.c.o   -c /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_doprnt’ undeclared (first use in this function); did you mean ‘fdopen’?
+   return ((int*)(&_doprnt))[argc];
+                   ^~~~~~~
+                   fdopen
+/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_1bca6.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_1bca6.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1bca6.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1bca6/fast' failed
+make: *** [cmTC_1bca6/fast] Error 2
+
+File /home/tangss/tmp/misc/linux/c/ipc/bus/json/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _doprnt
+  return ((int*)(&_doprnt))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

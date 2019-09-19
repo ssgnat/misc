@@ -1,0 +1,4 @@
+/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/build/CMakeFiles/rebuild_cache.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/build/CMakeFiles/edit_cache.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/build/CMakeFiles/conduit_srv.dir
+/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/build/CMakeFiles/conduit_cli.dir
