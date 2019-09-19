@@ -76,7 +76,7 @@ static const int methods_max = MAX_OBJECTS * MAX_METHODS;
 typedef struct {
 	const char	key[MAX_METHOD_NAME_LEN+MAX_OBJ_NAME_LEN];
 	const char 	method_name[MAX_METHOD_NAME_LEN];
-	srv_module_process_func 	fun;
+	request_callback 	fun;
 } method_t;
 
 static method_t _methods[MAX_OBJECTS * MAX_METHODS];
@@ -278,6 +278,8 @@ _uloop_run_thread(void *arg)
 	uloop_run();
 
     Msg_Debug(" QUIT ULOOP TREHAD!!!!!!!");
+    //uloop_done();
+
     pthread_exit(0);
 	return NULL;
 }
@@ -295,7 +297,7 @@ int
 cdt_srv_start(void)
 {
     int i = 0;
-
+   
 	signal(SIGPIPE, SIG_IGN);
 
 	if (_ctx) {
@@ -325,26 +327,31 @@ cdt_srv_start(void)
 	return UBUS_APP_OK;
 }
 
+//BUG: uloop_run() do not quit after uloop_done & uloop_end when testing by
+//cmockery.
 int
 cdt_srv_stop(void)
 {
     int  rval = -1;
     int *exit_code = NULL;
 
+    uloop_done();
     Msg_Debug("");
-	uloop_done();
+    uloop_end();
+    uloop_done();
     Msg_Debug("");
 
-	if (_ctx) {
-        ubus_free(_ctx);
+    if (_ubus_loop_tid > 0) {
+        rval = pthread_join(_ubus_loop_tid, (void **)&exit_code);
+        printf("%s return:%p\n", __FUNCTION__, exit_code);
     }
 
     Msg_Debug("");
+	if (_ctx) {
+        ubus_free(_ctx);
+    }
 	_ctx = NULL;
 
-    rval = pthread_join(_ubus_loop_tid, (void **)&exit_code);
-
-    printf("%s return:%p\n", __FUNCTION__, exit_code);
     return rval;
 }
 
@@ -373,7 +380,7 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 			continue;
 		}
 
-		Msg_Info("tangss register event:%s\n",events[i]);
+		Msg_Info("register event:%s\n",events[i]);
 		ret = ubus_register_event_handler(_ctx, &_listerner, events[i]);
 		if (ret) {
 			Msg_Error("start register event error :%s",events[i]);
@@ -382,13 +389,14 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 
 	return 0;
 }
+
 int
-cdt_srv_send_event(int type, int devid, const char* event, const char* jsonstr)
+cdt_srv_send_event(const char *event_type, const char *event_content)
 {
 	static blob_buf_t b;
 	blobmsg_add_u32(&b, "rc", 0);
-	blobmsg_add_string(&b, "data", jsonstr);
+	blobmsg_add_string(&b, "data", event_content);
 
-	return ubus_send_event(_ctx, event, b.head);
+	return ubus_send_event(_ctx, event_type, b.head);
 }
 

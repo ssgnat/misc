@@ -16,16 +16,16 @@
 #define COLOR_TRACE   "37;40;1m"
 
 #define Msg_Info(format, args...) \
-    (printf( ESC_START COLOR_INFO "[INFO]-[%s]-[%d]:" format ESC_END,   \
+    (printf( ESC_START COLOR_INFO "[INFO]-[%s]-[%d]:" format ESC_END "\n",   \
              __FUNCTION__ , __LINE__, ##args))
 #define Msg_Debug(format, args...) \
-    (printf( ESC_START COLOR_DEBUG "[DEBUG]-[%s]-[%d]:" format ESC_END, \
+    (printf( ESC_START COLOR_DEBUG "[DEBUG]-[%s]-[%d]:" format ESC_END "\n", \
              __FUNCTION__ , __LINE__, ##args))
 #define Msg_Warn(format, args...) \
-    (printf( ESC_START COLOR_WARN "[WARN]-[%s]-[%d]:" format ESC_END,   \
+    (printf( ESC_START COLOR_WARN "[WARN]-[%s]-[%d]:" format ESC_END "\n",   \
              __FUNCTION__ , __LINE__, ##args))
 #define Msg_Error(format, args...) \
-    (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%d]:" format ESC_END, \
+    (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%d]:" format ESC_END "\n", \
              __FUNCTION__ , __LINE__, ##args))
 #endif
 
@@ -43,16 +43,15 @@
 #define MAX_EVENTS 8
 #define MAX_EVENT_LEN 64
 
-typedef void (*event_callback)(const char *type, const char *str);
+typedef void (*event_callback)(const char *event_type, const char *resp_content);
 
-typedef int (*srv_module_process_func)(const char *request,
-        char result[CUSTOM_OBJECT_NAME_LEN_MAX]);
+typedef int (*request_callback)(const char *req_content,
+        char resp_content[CUSTOM_OBJECT_NAME_LEN_MAX]);
 
 typedef struct {
 	char method_name[MAX_METHOD_NAME_LEN];
-	srv_module_process_func fun;
+	request_callback fun;
 } module_method_t;
-
 
 
 int cdt_srv_start(void);
@@ -60,8 +59,7 @@ int cdt_srv_start(void);
 int cdt_srv_add_module(const char *module_name,
         module_method_t *module_methods, int n_methods);
 
-int cdt_srv_send_event(int type, int devid, const char *event,
-        const char *jsonstr);
+int cdt_srv_send_event(const char *event_type, const char *event_content);
 int cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
         event_callback callback);
 

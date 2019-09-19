@@ -74,22 +74,27 @@
 #define MAX_EVENTS 8
 #define MAX_EVENT_LEN 64
 
-typedef void (*request_callback)(void *data, int rc, const char *content);
 
-typedef void (*event_callback)(const char *type, const char *str);
+typedef void (*response_callback)(void *auxiliary, int resp_code,
+        const char *resp_content);
+
+typedef void (*event_callback)(const char *event_type, const char *resp_content);
 
 #ifndef CUSTOM_SYNC_PARAM_STRUCT
 #define CUSTOM_SYNC_PARAM_STRUCT
 typedef struct {
-	request_callback  callback;
-	void             *data;  // callback passthrought data
-}request_param_t;
+	response_callback  callback;
+
+    //auxiliary is not sent out, and when the responded as an argument of
+    //response function, refer to the response_callback
+	void              *auxiliary;
+}response_handler_t;
 #endif
 
 //called once in the whole process lifecycle
 int cdt_cli_start(void);
 
-int cdt_cli_request(request_param_t param, const char *module,
+int cdt_cli_request(response_handler_t param, const char *module,
         const char *method, const char *content);
 
 //register events only called once in the whole process lifecycle

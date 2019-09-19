@@ -45,13 +45,13 @@ static const struct blobmsg_policy _return_policy[RETURN_MAX] = {
 };
 
 static void
-_cdt_cli_request_callback(struct ubus_request *req, int type,
+_cdt_cli_response_callback(struct ubus_request *req, int type,
         struct blob_attr *msg)
 {
 	int rc;
 	struct blob_attr *tb[RETURN_MAX];
 
-	request_param_t *_param = (request_param_t*)(req->priv);
+	response_handler_t *_param = (response_handler_t*)(req->priv);
 
 	blobmsg_parse(_return_policy, RETURN_MAX, tb, blob_data(msg),
             blob_len(msg));
@@ -65,12 +65,12 @@ _cdt_cli_request_callback(struct ubus_request *req, int type,
 
 	Msg_Debug("jsonstring:%s \n",jsonstring);
 
-	_param->callback(_param->data, rc, jsonstring);
+	_param->callback(_param->auxiliary, rc, jsonstring);
 }
 
 static int
 _send_request_command(const char *module, const char *method,
-        const char *jsonstring, request_param_t _param)
+        const char *req, response_handler_t _param)
 {
 	uint32_t id;
 	int ret = ubus_lookup_id(_ubus_context, module, &id);
@@ -81,10 +81,10 @@ _send_request_command(const char *module, const char *method,
 	}
 
 	blob_buf_init(&_blob_buf, 0);
-	blobmsg_add_string(&_blob_buf, HZCUSTOM_METHOD_ARG1, jsonstring);
+	blobmsg_add_string(&_blob_buf, HZCUSTOM_METHOD_ARG1, req);
 	Msg_Debug("ubus_invoke \n");
 	return ubus_invoke(_ubus_context, id, method, _blob_buf.head,
-            _cdt_cli_request_callback, &_param, 3000);
+            _cdt_cli_response_callback, &_param, 3000);
 }
 
 
@@ -128,13 +128,13 @@ _ubus_uloop_thread(void *argv)
 
 int
 cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        event_callback callback)
+        event_callback cb)
 {
 	int ret = 0;
     int i = 0;
 
     if (_event_callback ==  NULL) {
- 	    _event_callback = callback;
+ 	    _event_callback = cb;
     } else {
         Msg_Error("cdt_cli_register_events has been called before,"
                 "only called once in the whole process lifecycle.");
@@ -198,6 +198,7 @@ cdt_cli_start(void)
 	_ubus_context = ubus_connect(UBUSD_SOCKET_PATH);
 	if (!_ubus_context) {
 		Msg_Error("Failed to connect to ubus errno:%d\n",errno);
+        uloop_end();
 		uloop_done();
 		return -1;
 	}
@@ -211,8 +212,11 @@ cdt_cli_start(void)
 int
 cdt_cli_stop(void)
 {
+    uloop_done();
+    uloop_end();
+    
 	if (_ubus_context) {
-		uloop_done();
+
 		ubus_free(_ubus_context);
 		_ubus_context = NULL;
 	}
@@ -222,7 +226,7 @@ cdt_cli_stop(void)
 
 
 int
-cdt_cli_request(request_param_t param, const char *module,
+cdt_cli_request(response_handler_t param, const char *module,
         const char *method, const char *content)
 {
 	return _send_request_command(module,method,content,param);
