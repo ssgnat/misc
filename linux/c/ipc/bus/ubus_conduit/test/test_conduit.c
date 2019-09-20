@@ -332,36 +332,6 @@ int main(int argc, char *argv[])
             unit_test(test_client_start),
             //unit_test(test_client_register_event),
             //call
-            unit_test(test_client_call),
-            //event
-            //unit_test(test_client_send_event),
-            //register event
-            unit_test(test_client_stop),
-        };
-        run_tests(tests);
-        return 0;
-    }
-    else
-    {
-        printf("This is the parent process. My PID is %d.\n", getpid());
-        UnitTest tests[] = {
-    pid_t pid;
-    pid = fork();
-    if(pid < 0)
-    {
-        perror("fork failed");
-        exit(1);
-    }
-
-    if(pid == 0)
-    {
-        sleep(10);
-        printf("This is the child process. My PID is: %d. My PPID is: %d.\n",
-                getpid(), getppid());
-        UnitTest tests[] = {
-            unit_test(test_client_start),
-            //unit_test(test_client_register_event),
-            //call
             //unit_test(test_client_call),
             //event
             unit_test(test_client_send_event),
@@ -370,9 +340,7 @@ int main(int argc, char *argv[])
         };
         run_tests(tests);
         return 0;
-    }
-    else
-    {
+    } else {
         printf("This is the parent process. My PID is %d.\n", getpid());
         UnitTest tests[] = {
             unit_test(test_server_start),

@@ -27,7 +27,7 @@ SRCEXTS := .c
 # If it is a C and C++ merging program, set these flags for the C parts.
 CFLAGS := -g
 CFLAGS += -DDEBUG
-CFLAGS += -D$(TARGET)
+CFLAGS += $(TARGET)
 CFLAGS += -I./
 CFLAGS += -I../
 CFLAGS += -I../../
@@ -138,7 +138,6 @@ ifeq ($(strip $(SRCEXTS)), .c) # C file
 	$(CC) -o $(PROGRAM) $(OBJS) $(LDFLAGS)
 	$(STRIP) $(PROGRAM)
 	cp $(PROGRAM) ../../bin -rf
-	sudo ./test.sh
 else # C++ file
 	$(CXX) -o $(PROGRAM) $(OBJS) $(LDFLAGS)
 endif
