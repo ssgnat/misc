@@ -25,6 +25,8 @@
 
 #define debug 0
 
+typedef struct blob_attr blob_attr_t;
+
 enum {
 	RETURN_CODE,
 	RETURN_DATA,
@@ -36,6 +38,7 @@ static	pthread_t _pid = -1;
 static struct ubus_context *_ubus_context;
 static struct ubus_event_handler _listerner;
 static struct blob_buf _blob_buf;
+static struct blob_buf _blob_event;
 
 static event_callback _event_callback;
 
@@ -45,11 +48,10 @@ static const struct blobmsg_policy _return_policy[RETURN_MAX] = {
 };
 
 static void
-_cdt_cli_response_callback(struct ubus_request *req, int type,
-        struct blob_attr *msg)
+_cdt_cli_response_callback(struct ubus_request *req, int type, blob_attr_t *msg)
 {
 	int rc;
-	struct blob_attr *tb[RETURN_MAX];
+	blob_attr_t *tb[RETURN_MAX];
 
 	response_handler_t *_param = (response_handler_t*)(req->priv);
 
@@ -73,7 +75,9 @@ _send_request_command(const char *module, const char *method,
         const char *req, response_handler_t _param)
 {
 	uint32_t id;
+	Msg_Debug("");
 	int ret = ubus_lookup_id(_ubus_context, module, &id);
+	Msg_Debug("");
 	if (ret) {
 		Msg_Error("Failed to look up test object - %s, module:%s \n",
                 method, module);
@@ -81,8 +85,8 @@ _send_request_command(const char *module, const char *method,
 	}
 
 	blob_buf_init(&_blob_buf, 0);
-	blobmsg_add_string(&_blob_buf, HZCUSTOM_METHOD_ARG1, req);
-	Msg_Debug("ubus_invoke \n");
+	blobmsg_add_string(&_blob_buf, METHOD_ARG1, req);
+	Msg_Debug(" ubus_invoke \n");
 	return ubus_invoke(_ubus_context, id, method, _blob_buf.head,
             _cdt_cli_response_callback, &_param, 3000);
 }
@@ -98,7 +102,7 @@ _ubus_connection_lost(struct ubus_context *_context)
 
 static void
 _ubus_probe_device_event(struct ubus_context *context,
-        struct ubus_event_handler *ev, const char *type, struct blob_attr *msg)
+        struct ubus_event_handler *ev, const char *type, blob_attr_t *msg)
 {
 	char *str = NULL;
 
@@ -172,17 +176,17 @@ cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 
 
 int
-cdt_cli_send_event(const char *event, const char *jsonstring)
+cdt_cli_send_event(const char *event, const char *content)
 {
 	if (event == NULL) {
         return -1;
     }
 
-    blob_buf_init(&_blob_buf, 0);
-    blobmsg_add_u32(&_blob_buf, "rc", 0);
-    blobmsg_add_string(&_blob_buf, "data", jsonstring);
+    blob_buf_init(&_blob_event, 0);
+    blobmsg_add_u32(&_blob_event, "rc", 0);
+    blobmsg_add_string(&_blob_event, "data", content);
 
-    return ubus_send_event(_ubus_context, event, _blob_buf.head);
+    return ubus_send_event(_ubus_context, event, _blob_event.head);
 }
 
 
@@ -229,6 +233,6 @@ int
 cdt_cli_request(response_handler_t param, const char *module,
         const char *method, const char *content)
 {
-	return _send_request_command(module,method,content,param);
+	return _send_request_command(module,method,content, param);
 }
 

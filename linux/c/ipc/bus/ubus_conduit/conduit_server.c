@@ -67,6 +67,7 @@ enum
 static pthread_t       _ubus_loop_tid = -1;
 static ubus_context_t *_ctx;
 static blob_buf_t      _buf;
+static blob_buf_t      event_buf;
 
 static const blobmsg_policy_t policies[] =
     {[MY_DATA] = {.name="data", .type = BLOBMSG_TYPE_STRING},};
@@ -179,7 +180,7 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 	for (j = 0; j < n_methods; j++) {
 		n=-1;
 
-		len =  strlen(module_name);
+		len = strlen(module_name);
 		memmove(retstr, module_name, len);
 		memmove((retstr+len), module_methods[j].method_name,
                 strlen(module_methods[j].method_name));
@@ -188,9 +189,9 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 		for (i = 0; i < methods_max; i++) {
 			if (_methods[i].key[0] == 0 ) {
 				if (n < 0){
-					n=i;
+					n = i;
                 }
-				continue;
+                break;
 			}
 
 			if (!strcmp(_methods[i].key, retstr)) {
@@ -237,15 +238,34 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 	object->name = (char*)malloc(i);
 	memset((char*)object->name, 0, i);
 	memmove((char*)object->name, module_name, i);
+
 	tmptype = (ubus_object_type_t *)malloc(sizeof(ubus_object_type_t));
 	tmptype->name = object->name;
 	tmptype->methods = methods;
 	tmptype->n_methods = n_methods;
 	tmptype->id = 0;
+
 	object->type = tmptype;
 	object->methods = methods;
 	object->n_methods = n_methods;
 	ubus_add_object(_ctx, object);
+
+    /*==================
+    static const struct ubus_method test_methods[] = {
+        UBUS_METHOD("helloworld", test_hello, hello_policy),
+    };
+
+    static struct ubus_object_type test_object_type =
+        UBUS_OBJECT_TYPE("test_ubus", test_methods);
+
+    static struct ubus_object test_object = {
+        .name = "test_ubus",
+        .type = &test_object_type,
+        .methods = test_methods,
+        .n_methods = ARRAY_SIZE(test_methods)
+    };
+    //======================================
+    */
 
 	return UBUS_APP_OK;
 
@@ -391,12 +411,12 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 }
 
 int
-cdt_srv_send_event(const char *event_type, const char *event_content)
+cdt_srv_send_event(const char *event, const char *content)
 {
-	static blob_buf_t b;
-	blobmsg_add_u32(&b, "rc", 0);
-	blobmsg_add_string(&b, "data", event_content);
+    blob_buf_init(&event_buf, 0);
+	blobmsg_add_u32(&event_buf, "rc", 0);
+	blobmsg_add_string(&event_buf, "data", content);
 
-	return ubus_send_event(_ctx, event_type, b.head);
+	return ubus_send_event(_ctx, event, event_buf.head);
 }
 

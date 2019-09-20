@@ -26,7 +26,8 @@ SRCEXTS := .c
 # If it is a C++ program, no need to set these flags.
 # If it is a C and C++ merging program, set these flags for the C parts.
 CFLAGS := -g
-CFLAGS := -DDEBUG
+CFLAGS += -DDEBUG
+CFLAGS += -D$(TARGET)
 CFLAGS += -I./
 CFLAGS += -I../
 CFLAGS += -I../../

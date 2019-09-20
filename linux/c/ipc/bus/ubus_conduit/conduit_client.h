@@ -46,15 +46,15 @@
 // #define Msg_Debug(format, args...)
 
 #define Msg_Debug(format, args...) (printf( ESC_START COLOR_DEBUG \
-        "[DEBUG]-[%s]-[%d]:" format ESC_END, __FUNCTION__ , __LINE__, ##args))
+        "[DEBUG]-[%s]-[%d]:" format ESC_END "\n", __FUNCTION__ , __LINE__, ##args))
 #define Msg_Warn(format, args...) (printf( ESC_START COLOR_WARN \
-        "[WARN]-[%s]-[%d]:" format ESC_END,  __FUNCTION__ , __LINE__, ##args))
+        "[WARN]-[%s]-[%d]:" format ESC_END "\n",  __FUNCTION__ , __LINE__, ##args))
 #define Msg_Error(format, args...) \
     (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%d]:" \
-             format ESC_END, __FUNCTION__ , __LINE__, ##args))
+             format ESC_END "\n", __FUNCTION__ , __LINE__, ##args))
 
 #define Msg_Info_L(format, args...) \
-    (printf( ESC_START COLOR_INFO "[INFO]-[%s]-[%s]-[%d]:" format ESC_END, \
+    (printf( ESC_START COLOR_INFO "[INFO]-[%s]-[%s]-[%d]:" format ESC_END "\n", \
          __FILE__, __FUNCTION__ , __LINE__, ##args))
 
 #define Msg_Debug_L(format, args...) \
@@ -70,15 +70,14 @@
              __FILE__, __FUNCTION__ , __LINE__, ##args))
 #endif
 
-#define MAX_BUFFER_LEN 102400
-#define MAX_EVENTS 8
-#define MAX_EVENT_LEN 64
+#define MAX_EVENTS      8
+#define MAX_EVENT_LEN   64
 
 
 typedef void (*response_callback)(void *auxiliary, int resp_code,
         const char *resp_content);
 
-typedef void (*event_callback)(const char *event_type, const char *resp_content);
+typedef void (*event_callback)(const char *event, const char *resp_content);
 
 #ifndef CUSTOM_SYNC_PARAM_STRUCT
 #define CUSTOM_SYNC_PARAM_STRUCT
@@ -86,7 +85,8 @@ typedef struct {
 	response_callback  callback;
 
     //auxiliary is not sent out, and when the responded as an argument of
-    //response function, refer to the response_callback
+    //response function, refer to the response_callback.it's recommended NULL, 
+    //if not sure.
 	void              *auxiliary;
 }response_handler_t;
 #endif
@@ -98,11 +98,10 @@ int cdt_cli_request(response_handler_t param, const char *module,
         const char *method, const char *content);
 
 //register events only called once in the whole process lifecycle
-//const char *events
-// ={"sdcard","usbin","usbout"}
+//const char *events ={"sdcard","usbin","usbout"}
 int	cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
         event_callback callback);
-int	cdt_cli_send_event(const char *event, const char *jsonstring);
+int	cdt_cli_send_event(const char *event, const char *content);
 
 int cdt_cli_stop(void);
 
