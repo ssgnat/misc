@@ -65,9 +65,9 @@ enum
 };
 
 static pthread_t       _ubus_loop_tid = -1;
-static ubus_context_t *_ctx;
-static blob_buf_t      _buf;
-static blob_buf_t      event_buf;
+static ubus_context_t *_ubus_context;
+static blob_buf_t      _blob_buf;
+static blob_buf_t      _blob_event;
 
 static const blobmsg_policy_t policies[] =
     {[MY_DATA] = {.name="data", .type = BLOBMSG_TYPE_STRING},};
@@ -85,21 +85,21 @@ static ubus_event_handler_st _listerner;
 static event_callback _event_callback;
 
 static void
-_reply_int(ubus_context_t *_ctx, ubus_request_data_t *req, int ret,
+_reply_int(ubus_context_t *_ubus_context, ubus_request_data_t *req, int ret,
         const char* datajson)
 {
-	blob_buf_init(&_buf, 0);
-	blobmsg_add_u32(&_buf, "rc", ret);
+	blob_buf_init(&_blob_buf, 0);
+	blobmsg_add_u32(&_blob_buf, "rc", ret);
 	if (datajson != NULL) {
-		blobmsg_add_string(&_buf, "data", datajson);
+		blobmsg_add_string(&_blob_buf, "data", datajson);
     }
 
-	ubus_send_reply(_ctx, req, _buf.head);
+	ubus_send_reply(_ubus_context, req, _blob_buf.head);
 }
 
 
 static int
-_response(ubus_context_t *_ctx, ubus_object_t *obj, ubus_request_data_t *req,
+_response(ubus_context_t *_ubus_context, ubus_object_t *obj, ubus_request_data_t *req,
         const char *method, blob_attr_t *msg)
 {
 	Msg_Debug(" START method:%s\n",method);
@@ -144,7 +144,7 @@ _response(ubus_context_t *_ctx, ubus_object_t *obj, ubus_request_data_t *req,
                 _methods[i].key);
 		if (!strcmp(_methods[i].key, tmpstr)) {
 			rc = _methods[i].fun(str, retstr);
-			_reply_int(_ctx, req, rc, retstr);
+			_reply_int(_ubus_context, req, rc, retstr);
 			break;
 		}
 	}
@@ -248,7 +248,7 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 	object->type = tmptype;
 	object->methods = methods;
 	object->n_methods = n_methods;
-	ubus_add_object(_ctx, object);
+	ubus_add_object(_ubus_context, object);
 
     /*==================
     static const struct ubus_method test_methods[] = {
@@ -295,7 +295,12 @@ _ubus_probe_device_event(ubus_context_t *context,
 static void*
 _uloop_run_thread(void *arg)
 {
-	uloop_run();
+    if (_ubus_context) {
+        ubus_add_uloop(_ubus_context);
+        uloop_run();
+    } else {
+        Msg_Error("_ubus_context is NULL");
+    }
 
     Msg_Debug(" QUIT ULOOP TREHAD!!!!!!!");
     //uloop_done();
@@ -307,7 +312,6 @@ _uloop_run_thread(void *arg)
 static int
 _cdt_srv_run(void)
 {
-	ubus_add_uloop(_ctx);
 	pthread_create(&_ubus_loop_tid, NULL, _uloop_run_thread, NULL);
 
 	return 0;
@@ -320,7 +324,7 @@ cdt_srv_start(void)
    
 	signal(SIGPIPE, SIG_IGN);
 
-	if (_ctx) {
+	if (_ubus_context) {
 		Msg_Error("has been started! don't call multi-times");
 		return -1;
 	}
@@ -334,8 +338,8 @@ cdt_srv_start(void)
 
 	uloop_init();
 
-	_ctx = ubus_connect(UBUSD_SOCKET_PATH);
-	if (!_ctx) {
+	_ubus_context = ubus_connect(UBUSD_SOCKET_PATH);
+	if (!_ubus_context) {
 		Msg_Error("uloop_connect error UBUSD_SOCKET_PATH:%s\n",
                 UBUSD_SOCKET_PATH);
 		uloop_done();
@@ -367,10 +371,10 @@ cdt_srv_stop(void)
     }
 
     Msg_Debug("");
-	if (_ctx) {
-        ubus_free(_ctx);
+	if (_ubus_context) {
+        ubus_free(_ubus_context);
     }
-	_ctx = NULL;
+	_ubus_context = NULL;
 
     return rval;
 }
@@ -401,7 +405,7 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 		}
 
 		Msg_Info("register event:%s\n",events[i]);
-		ret = ubus_register_event_handler(_ctx, &_listerner, events[i]);
+		ret = ubus_register_event_handler(_ubus_context, &_listerner, events[i]);
 		if (ret) {
 			Msg_Error("start register event error :%s",events[i]);
 		}
@@ -413,10 +417,14 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 int
 cdt_srv_send_event(const char *event, const char *content)
 {
-    blob_buf_init(&event_buf, 0);
-	blobmsg_add_u32(&event_buf, "rc", 0);
-	blobmsg_add_string(&event_buf, "data", content);
+	if (event == NULL) {
+        return -1;
+    }
 
-	return ubus_send_event(_ctx, event, event_buf.head);
+    blob_buf_init(&_blob_event, 0);
+	blobmsg_add_u32(&_blob_event, "rc", 0);
+	blobmsg_add_string(&_blob_event, "data", content);
+
+	return ubus_send_event(_ubus_context, event, _blob_event.head);
 }
 
