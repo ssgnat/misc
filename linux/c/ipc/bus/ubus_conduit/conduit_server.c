@@ -69,16 +69,9 @@ enum
 
 static int              _event_buf_index = 0;
 static pthread_t       _ubus_loop_tid = -1;
-<<<<<<< HEAD
-static ubus_context_t *_ctx;
-static blob_buf_t      _buf;
-static blob_buf_t      event_buf[MAX_BLOB_BUF] = {0};
-
-=======
 static ubus_context_t *_ubus_context;
 static blob_buf_t      _blob_buf;
-static blob_buf_t      _blob_event;
->>>>>>> 131d5e4c9d8be778186d1608cbdc3bc609bf2aa2
+static blob_buf_t      event_buf[MAX_BLOB_BUF] = {0};
 
 static const blobmsg_policy_t policies[] =
     {[MY_DATA] = {.name="data", .type = BLOBMSG_TYPE_STRING},};
@@ -441,7 +434,7 @@ cdt_srv_send_event(const char *event, const char *content)
 	blobmsg_add_string(&event_buf[_event_buf_index], "data",
             content);
 
-	return ubus_send_event(_ctx, event,
+	return ubus_send_event(_ubus_context, event,
             event_buf[_event_buf_index].head);
 }
 
