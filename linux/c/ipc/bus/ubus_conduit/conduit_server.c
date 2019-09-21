@@ -31,6 +31,8 @@
 #define MAX_RETRIES 10
 #endif
 
+#define MAX_BLOB_BUF 10
+
 typedef struct blob_buf             blob_buf_t;
 typedef struct blob_attr            blob_attr_t;
 typedef struct ubus_object          ubus_object_t;
@@ -48,7 +50,7 @@ enum {
 
 enum
 {
-	UBUS_APP_ERROR_BASE=-100,
+	UBUS_APP_ERROR_BASE=-MAX_BLOB_BUF,
 
 	UBUS_APP_ERROR_INTERNAL_NULLPOINTER,
 	UBUS_APP_ERROR_PARSEREQ,
@@ -64,10 +66,13 @@ enum
 	UBUS_APP_OK=0,
 };
 
+
+static int              _event_buf_index = 0;
 static pthread_t       _ubus_loop_tid = -1;
 static ubus_context_t *_ctx;
 static blob_buf_t      _buf;
-static blob_buf_t      event_buf;
+static blob_buf_t      event_buf[MAX_BLOB_BUF] = {0};
+
 
 static const blobmsg_policy_t policies[] =
     {[MY_DATA] = {.name="data", .type = BLOBMSG_TYPE_STRING},};
@@ -377,7 +382,7 @@ cdt_srv_stop(void)
 
 int
 cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        event_callback callback)
+        int nevents, event_callback callback)
 {
 	int ret = 0;
     int i = 0;
@@ -394,7 +399,7 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 	_listerner.cb = _ubus_probe_device_event;
 	// Msg_Info("register event:%s\n",events[0]);
 
-	for (i = 0; i < MAX_EVENTS; i++) {
+	for (i = 0; i < nevents; i++) {
 		if (events[i][0] == 0) {
 			Msg_Debug("start register event:%s skip \n",events[i]);
 			continue;
@@ -404,6 +409,7 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 		ret = ubus_register_event_handler(_ctx, &_listerner, events[i]);
 		if (ret) {
 			Msg_Error("start register event error :%s",events[i]);
+            return -1;
 		}
 	}
 
@@ -413,10 +419,19 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 int
 cdt_srv_send_event(const char *event, const char *content)
 {
-    blob_buf_init(&event_buf, 0);
-	blobmsg_add_u32(&event_buf, "rc", 0);
-	blobmsg_add_string(&event_buf, "data", content);
 
-	return ubus_send_event(_ctx, event, event_buf.head);
+	if (event == NULL) {
+        return -1;
+    }
+
+    _event_buf_index = _event_buf_index == 0 ? 1 : 0;
+
+    blob_buf_init(&event_buf[_event_buf_index], 0);
+	blobmsg_add_u32(&event_buf[_event_buf_index], "rc", 0);
+	blobmsg_add_string(&event_buf[_event_buf_index], "data",
+            content);
+
+	return ubus_send_event(_ctx, event,
+            event_buf[_event_buf_index].head);
 }
 

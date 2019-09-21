@@ -24,7 +24,6 @@
 //#include "ubus_server_command.h"
 
 #define debug 0
-#define MAX_BLOB_BUF 2
 
 typedef struct blob_attr blob_attr_t;
 
@@ -34,14 +33,12 @@ enum {
 	RETURN_MAX,
 };
 
-static  int       _blob_event_index = 0;
 static	pthread_t _pid = -1;
 
 static struct ubus_context *_ubus_context;
 static struct ubus_event_handler _listerner;
 static struct blob_buf _blob_buf;
-static struct blob_buf _blob_event[MAX_BLOB_BUF] = {0};
-
+static struct blob_buf _blob_event;
 
 static event_callback _event_callback;
 
@@ -122,37 +119,18 @@ _ubus_probe_device_event(struct ubus_context *context,
 static void*
 _ubus_uloop_thread(void *argv)
 {
-	if (_ubus_context) {
-		ubus_add_uloop(_ubus_context);
-		uloop_run();
-	} else {
-		Msg_Error("_ubus_context is NULL\n");
-    }
 
-	return NULL;
-}
-
-
-int
-cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        int nevents, event_callback cb)
-{
 	int ret = 0;
     int i = 0;
 
-    if (_event_callback ==  NULL) {
- 	    _event_callback = cb;
-    } else {
-        Msg_Error("cdt_cli_register_events has been called before,"
-                "only called once in the whole process lifecycle.");
-        return -1;
-    }
 	/* 注册特定event的_listerner。多个event可以使用同一个_listerner */
 	memset(&_listerner, 0, sizeof(_listerner));
 	_listerner.cb = _ubus_probe_device_event;
 	// Msg_Info("register event:%s\n",events[0]);
+    
+    char *events = (char *)argv;
 
-	for (i=0; i < nevents; i++) {
+	for (i=0; i<MAX_EVENTS; i++) {
 		if (events[i][0] == 0) {
 			Msg_Debug("start register event:%s skip \n",events[i]);
 			continue;
@@ -166,8 +144,32 @@ cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 		}
 	}
 
+	if (_ubus_context) {
+		ubus_add_uloop(_ubus_context);
+		uloop_run();
+	} else {
+		Msg_Error("_ubus_context is NULL\n");
+    }
+
+	return NULL;
+}
+
+
+int
+cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
+        event_callback cb)
+{
+
+    if (_event_callback ==  NULL) {
+ 	    _event_callback = cb;
+    } else {
+        Msg_Error("cdt_cli_register_events has been called before,"
+                "only called once in the whole process lifecycle.");
+        return -1;
+    }
+
 	if (_pid == -1) {
-		int err = pthread_create(&_pid, NULL, _ubus_uloop_thread, NULL);
+		int err = pthread_create(&_pid, NULL, _ubus_uloop_thread, events);
 		if (err != 0) {
 			Msg_Error("exit, as can't create thread 1: %s\n", strerror(err));
 			exit(-1);
@@ -182,20 +184,15 @@ cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 int
 cdt_cli_send_event(const char *event, const char *content)
 {
-
 	if (event == NULL) {
         return -1;
     }
 
-    _blob_event_index = _blob_event_index == 0 ? 1 : 0;
+    blob_buf_init(&_blob_event, 0);
+    blobmsg_add_u32(&_blob_event, "rc", 0);
+    blobmsg_add_string(&_blob_event, "data", content);
 
-    blob_buf_init(&_blob_event[_blob_event_index], 0);
-    blobmsg_add_u32(&_blob_event[_blob_event_index], "rc", 0);
-    blobmsg_add_string(&_blob_event[_blob_event_index], "data",
-            content);
-
-    return ubus_send_event(_ubus_context, event,
-            _blob_event[_blob_event_index].head);
+    return ubus_send_event(_ubus_context, event, _blob_event.head);
 }
 
 

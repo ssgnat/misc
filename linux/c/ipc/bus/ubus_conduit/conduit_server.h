@@ -15,6 +15,7 @@
 #define COLOR_DEBUG   "36;40;1m"
 #define COLOR_TRACE   "37;40;1m"
 
+#ifdef DEBUG
 #define Msg_Info(format, args...) \
     (printf( ESC_START COLOR_INFO "[INFO]-[%s]-[%d]:" format ESC_END "\n",   \
              __FUNCTION__ , __LINE__, ##args))
@@ -27,6 +28,12 @@
 #define Msg_Error(format, args...) \
     (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%d]:" format ESC_END "\n", \
              __FUNCTION__ , __LINE__, ##args))
+#else
+#define Msg_Info(format, args...)
+#define Msg_Debug(format, args...)
+#define Msg_Warn(format, args...)
+#define Msg_Error(format, args...)
+#endif
 #endif
 
 #define MAX_RESULT_BUFFER_SIZE 256
@@ -61,7 +68,7 @@ int cdt_srv_add_module(const char *module_name,
 
 int cdt_srv_send_event(const char *event_type, const char *event_content);
 int cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        event_callback callback);
+        int nevents, event_callback callback);
 
 int cdt_srv_stop(void);
 #endif

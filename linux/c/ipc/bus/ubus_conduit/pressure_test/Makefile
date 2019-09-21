@@ -8,7 +8,7 @@ PROGRAM := $(NAME)
 # SRCDIRS := . # current directory
 SRCDIRS := .
 SRCDIRS += ../
-SRCDIRS += ../../../../cmockery/src/
+#SRCDIRS += ../../../../cmockery/src/
 
 # The source file types (headers excluded).
 # At least one type should be specified.

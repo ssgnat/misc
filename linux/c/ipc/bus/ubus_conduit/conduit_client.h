@@ -100,7 +100,7 @@ int cdt_cli_request(response_handler_t param, const char *module,
 //register events only called once in the whole process lifecycle
 //const char *events ={"sdcard","usbin","usbout"}
 int	cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        event_callback callback);
+        int nevents, event_callback callback);
 int	cdt_cli_send_event(const char *event, const char *content);
 
 int cdt_cli_stop(void);

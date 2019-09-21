@@ -117,9 +117,7 @@ srv_event_callback(const char *type, const char *str)
     int j = -1;
 
     printf("er-srv-time:%d\n", s_cnt++);
-//    printf("event_callback type:%s content:%s\n", type, str);
-
-    return;
+    printf("event_callback type:%s content:%s\n", type, str);
 
     for (i = 0; i < ARRAY_SIZE(srvevents); i++) {
         if (j) {
@@ -163,7 +161,6 @@ cli_event_callback(const char *type, const char *str)
     printf("er-cli-time:%d\n", s_cnt++);
     printf("event_callback type:%s content:%s\n", type, str);
 
-    return ;
     for (i = 0; i < ARRAY_SIZE(clievents); i++) {
         if (j) {
             j = strcmp(type, clievents[i]);
@@ -225,9 +222,7 @@ static void
 test_client_call(void **state)
 {
     printf("cs - time:%d\n", c_cnt++);
-        usleep(10000);
     cdt_cli_request(request1, "module1", "m1", "test_client_1");
-        usleep(10000);
     printf("cs - time:%d\n", c_cnt++);
     cdt_cli_request(request2, "module2", "m2", "test_client_2");
 
@@ -242,7 +237,6 @@ test_client_send_event(void **state)
 
     for (i = 0; i < ARRAY_SIZE(srvevents); i++) {
         printf("es-cli-time:%d\n", c_cnt++);
-        //usleep(10000);
         cdt_cli_send_event(srvevents[i], srveventcontents[i]);
     }
 
@@ -288,6 +282,7 @@ int main(int argc, char *argv[])
     sleep(5);
     test_client_start(NULL);
     while (c_cnt < 5000) {
+        usleep(10000);
         test_client_call(NULL);
         //printf("TIME:%d\n", c_cnt++);
     }
@@ -313,11 +308,11 @@ int main(int argc, char *argv[])
     printf("===========TEST_SRV_EVENTS CLIENT============\n");
     printf("=============================================\n");
 
-    sleep(5);
+    sleep(10);
     test_client_start(NULL);
     while (c_cnt < 5000) {
         test_client_send_event(NULL);
-        //usleep(10000);
+        usleep(10000);
         //printf("TIME:%d\n", c_cnt++);
     }
     test_client_stop(NULL);
@@ -330,7 +325,7 @@ int main(int argc, char *argv[])
     test_server_start(NULL);
     test_server_register_event(NULL);
     while (s_cnt < 5000) {
-        usleep(100000);
+        usleep(100);
     }
     test_server_stop(NULL);
     return 0;
@@ -344,13 +339,13 @@ int main(int argc, char *argv[])
     printf("===========TEST_CLI_EVENTS CLIENT============\n");
     printf("=============================================\n");
 
+    sleep(1);
     test_client_start(NULL);
     test_client_register_event(NULL);
     while (s_cnt < 5000) {
         sleep(1);
     }
     test_client_stop(NULL);
-    sleep(10);
     return 0;
 #else
     printf("=============================================\n");
@@ -359,7 +354,7 @@ int main(int argc, char *argv[])
     test_server_start(NULL);
     while (c_cnt < 5000) {
         test_server_send_event(NULL);
-        //usleep(100000);
+        usleep(100000);
         //printf("TIME:%d\n", c_cnt++);
     }
     test_server_stop(NULL);
