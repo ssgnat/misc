@@ -71,7 +71,7 @@ static int              _event_buf_index = 0;
 static pthread_t       _ubus_loop_tid = -1;
 static ubus_context_t *_ubus_context;
 static blob_buf_t      _blob_buf;
-static blob_buf_t      event_buf[MAX_BLOB_BUF] = {0};
+static blob_buf_t      _blob_event;
 
 static const blobmsg_policy_t policies[] =
     {[MY_DATA] = {.name="data", .type = BLOBMSG_TYPE_STRING},};
@@ -313,11 +313,16 @@ _uloop_run_thread(void *arg)
 	return NULL;
 }
 
-static int
-_cdt_srv_run(void)
+int
+cdt_srv_run(void)
 {
-	pthread_create(&_ubus_loop_tid, NULL, _uloop_run_thread, NULL);
 
+    if (_ubus_context) {
+        ubus_add_uloop(_ubus_context);
+        uloop_run();
+    } else {
+        Msg_Error("_ubus_context is NULL");
+    }
 	return 0;
 }
 
@@ -325,7 +330,7 @@ int
 cdt_srv_start(void)
 {
     int i = 0;
-   
+
 	signal(SIGPIPE, SIG_IGN);
 
 	if (_ubus_context) {
@@ -350,8 +355,6 @@ cdt_srv_start(void)
 		return -1;
 	}
 
-    _cdt_srv_run();
-
 	return UBUS_APP_OK;
 }
 
@@ -363,16 +366,8 @@ cdt_srv_stop(void)
     int  rval = -1;
     int *exit_code = NULL;
 
-    uloop_done();
-    Msg_Debug("");
     uloop_end();
     uloop_done();
-    Msg_Debug("");
-
-    if (_ubus_loop_tid > 0) {
-        rval = pthread_join(_ubus_loop_tid, (void **)&exit_code);
-        printf("%s return:%p\n", __FUNCTION__, exit_code);
-    }
 
     Msg_Debug("");
 	if (_ubus_context) {
@@ -423,18 +418,70 @@ int
 cdt_srv_send_event(const char *event, const char *content)
 {
 
+#ifdef DEBUG
+    char *format = "../../bin/hzbus send -s %s %s \'{\"rc\":0, \"data\":\"%s\"}\'";
+#else
+    char *format = "hzbus send -s %s %s \'{\"rc\":0, \"data\":\"%s\"}\'";
+#endif
+
+    char buf[20480] = {0};
 	if (event == NULL) {
         return -1;
     }
 
-    _event_buf_index = _event_buf_index == 0 ? 1 : 0;
+    if (content == NULL) {
+        content  = "";
+    }
 
-    blob_buf_init(&event_buf[_event_buf_index], 0);
-	blobmsg_add_u32(&event_buf[_event_buf_index], "rc", 0);
-	blobmsg_add_string(&event_buf[_event_buf_index], "data",
-            content);
+    sprintf(buf, format, UBUSD_SOCKET_PATH, event, content);
+    buf[20479] = 0;
+    Msg_Debug("event buf command:%s", buf);
 
-	return ubus_send_event(_ubus_context, event,
-            event_buf[_event_buf_index].head);
+    system(buf);
+
+    return 0;
 }
 
+/*
+int
+cdt_srv_send_event(const char *event, const char *content)
+{
+    pid_t pid;
+    int   rval;
+
+	if (event == NULL) {
+        return -1;
+    }
+
+    pid = fork();
+    if (!pid) {
+
+        uloop_done();
+
+        uloop_init();
+
+        _ubus_context = ubus_connect(UBUSD_SOCKET_PATH);
+        if (!_ubus_context)
+        {
+            printf("ubus connect failed\n");
+            return -1;
+        }
+
+
+        blob_buf_init(&_blob_event, 0);
+        blobmsg_add_u32(&_blob_event, "rc", 0);
+        blobmsg_add_string(&_blob_event, "data", content);
+        rval = ubus_send_event(_ubus_context, event, _blob_event.head);
+
+        uloop_done();
+	    if (_ubus_context) {
+		    ubus_free(_ubus_context);
+        }
+
+        return 0;
+    } else {
+
+        return 0;
+    }
+}
+*/

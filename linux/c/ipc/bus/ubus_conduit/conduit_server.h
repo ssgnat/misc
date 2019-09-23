@@ -70,5 +70,6 @@ int cdt_srv_send_event(const char *event_type, const char *event_content);
 int cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
         int nevents, event_callback callback);
 
+int cdt_srv_run(void);
 int cdt_srv_stop(void);
 #endif

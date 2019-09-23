@@ -34,13 +34,12 @@ enum {
 	RETURN_MAX,
 };
 
-static  int       _blob_event_index = 0;
 static	pthread_t _pid = -1;
 
 static struct ubus_context *_ubus_context;
 static struct ubus_event_handler _listerner;
 static struct blob_buf _blob_buf;
-static struct blob_buf _blob_event[MAX_BLOB_BUF] = {0};
+static struct blob_buf _blob_event;
 
 
 static event_callback _event_callback;
@@ -91,7 +90,7 @@ _send_request_command(const char *module, const char *method,
 	blobmsg_add_string(&_blob_buf, METHOD_ARG1, req);
 	Msg_Debug(" ubus_invoke \n");
 	return ubus_invoke(_ubus_context, id, method, _blob_buf.head,
-            _cdt_cli_response_callback, &_param, 3000);
+            _cdt_cli_response_callback, &_param, 1000);
 }
 
 
@@ -119,19 +118,6 @@ _ubus_probe_device_event(struct ubus_context *context,
 	free(str);
 }
 
-static void*
-_ubus_uloop_thread(void *argv)
-{
-	if (_ubus_context) {
-		ubus_add_uloop(_ubus_context);
-		uloop_run();
-	} else {
-		Msg_Error("_ubus_context is NULL\n");
-    }
-
-	return NULL;
-}
-
 
 int
 cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
@@ -147,10 +133,9 @@ cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
                 "only called once in the whole process lifecycle.");
         return -1;
     }
-	/* 注册特定event的_listerner。多个event可以使用同一个_listerner */
+
 	memset(&_listerner, 0, sizeof(_listerner));
 	_listerner.cb = _ubus_probe_device_event;
-	// Msg_Info("register event:%s\n",events[0]);
 
 	for (i=0; i < nevents; i++) {
 		if (events[i][0] == 0) {
@@ -166,14 +151,11 @@ cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 		}
 	}
 
-	if (_pid == -1) {
-		int err = pthread_create(&_pid, NULL, _ubus_uloop_thread, NULL);
-		if (err != 0) {
-			Msg_Error("exit, as can't create thread 1: %s\n", strerror(err));
-			exit(-1);
-		}
-		//Msg_Error("create thread _pid:%d\n",(int)_pid);
-	}
+    if (_ubus_context) {
+        ubus_add_uloop(_ubus_context);
+        uloop_run();
+    }
+    uloop_done();
 
 	return 0;
 }
@@ -182,20 +164,68 @@ cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
 int
 cdt_cli_send_event(const char *event, const char *content)
 {
+#if 1 // system call version
+#ifdef DEBUG
+    char *format = "../../bin/hzbus send -s %s %s \'{\"rc\":0, \"data\":\"%s\"}\'";
+#else
+    char *format = "hzbus send -s %s %s \'{\"rc\":0, \"data\":\"%s\"}\'";
+#endif
+
+    char buf[20480] = {0};
+	if (event == NULL) {
+        return -1;
+    }
+
+    if (content == NULL) {
+        content  = "";
+    }
+
+    sprintf(buf, format, UBUSD_SOCKET_PATH, event, content);
+    buf[20479] = 0;
+    Msg_Debug("event buf command:%s", buf);
+
+    system(buf);
+
+    return 0;
+#else
+    pid_t pid;
+    int   rval;
 
 	if (event == NULL) {
         return -1;
     }
 
-    _blob_event_index = _blob_event_index == 0 ? 1 : 0;
+    if (!pid) {
 
-    blob_buf_init(&_blob_event[_blob_event_index], 0);
-    blobmsg_add_u32(&_blob_event[_blob_event_index], "rc", 0);
-    blobmsg_add_string(&_blob_event[_blob_event_index], "data",
+        uloop_done();
+
+        uloop_init();
+
+        _ubus_context = ubus_connect(UBUSD_SOCKET_PATH);
+        if (!_ubus_context)
+        {
+            printf("ubus connect failed\n");
+            return -1;
+        }
+
+
+        blob_buf_init(&_blob_event, 0);
+        blobmsg_add_u32(&_blob_event, "rc", 0);
+        blobmsg_add_string(&_blob_event, "data",
             content);
+        rval = ubus_send_event(_ubus_context, event,
+            _blob_event.head);
+        uloop_done();
+	    if (_ubus_context) {
+		    ubus_free(_ubus_context);
+        }
 
-    return ubus_send_event(_ubus_context, event,
-            _blob_event[_blob_event_index].head);
+        return 0;
+    } else {
+
+        return 0;
+    }
+#endif
 }
 
 
@@ -227,9 +257,8 @@ cdt_cli_stop(void)
 {
     uloop_done();
     uloop_end();
-    
-	if (_ubus_context) {
 
+	if (_ubus_context) {
 		ubus_free(_ubus_context);
 		_ubus_context = NULL;
 	}

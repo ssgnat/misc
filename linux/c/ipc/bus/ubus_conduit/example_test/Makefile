@@ -1,13 +1,14 @@
 # The executable file name.
 # It must be specified.
 # PROGRAM := a.out # the executable name
-PROGRAM := $(NAME)
+TARGET := $(T)
 
 # The directories in which source files reside.
 # At least one path should be specified.
 # SRCDIRS := . # current directory
-SRCDIRS := .
-SRCDIRS += ../
+SRCDIRS :=
+#SRCDIRS += ../
+#SRCDIRS += ./
 #SRCDIRS += ../../../../cmockery/src/
 
 # The source file types (headers excluded).
@@ -18,7 +19,8 @@ SRCDIRS += ../
 # SRCEXTS := .c .cpp # C/C++ program
 SRCEXTS := .c
 
-# The flags used by the cpp (man cpp for more).  # CPPFLAGS := -Wall -Werror # show all warnings and take them as errors
+# The flags used by the cpp (man cpp for more).
+# CPPFLAGS := -Wall -Werror # show all warnings and take them as errors
 #CPPFLAGS := -g
 
 # The compiling flags used only for C.
@@ -26,12 +28,11 @@ SRCEXTS := .c
 # If it is a C and C++ merging program, set these flags for the C parts.
 CFLAGS := -g
 CFLAGS += -DDEBUG
-CFLAGS += $(TARGET)
-CFLAGS += $(MODE)
+#CFLAGS += $(TARGET)
 CFLAGS += -I./
 CFLAGS += -I../
 CFLAGS += -I../../
-CFLAGS += -I../../../../cmockery/src/google/
+#CFLAGS += -I../../../../cmockery/src/google/
 
 # The compiling flags used only for C++.
 # If it is a C program, no need to set these flags.
@@ -68,13 +69,15 @@ RM = rm -f
 ##=============================================================================
 SHELL = /bin/sh
 SOURCES = $(foreach d,$(SRCDIRS),$(wildcard $(addprefix $(d)/*,$(SRCEXTS))))
+SOURCES += $(TARGET).c
 OBJS = $(foreach x,$(SRCEXTS), \
 		$(patsubst %$(x),%.o,$(filter %$(x),$(SOURCES))))
+#OBJS += $(TARGET).o
 DEPS = $(patsubst %.o,%.d,$(OBJS))
 
 .PHONY : all objs clean cleanall rebuild
 
-all : $(PROGRAM)
+all: $(TARGET)
 
 # Rules for creating the dependency files (.d).
 #---------------------------------------------------
@@ -126,18 +129,18 @@ objs : $(OBJS)
 
 %.o : %.cp
 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $< -o $@
- 
+
 %.o : %.cxx
 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $< -o $@
 
 # Rules for producing the executable.
 #----------------------------------------------
-$(PROGRAM) : $(OBJS)
+$(TARGET) : $(OBJS)
 ifeq ($(strip $(SRCEXTS)), .c) # C file
 	$(warning "OBJS" $(OBJS))
-	$(CC) -o $(PROGRAM) $(OBJS) $(LDFLAGS)
-	$(STRIP) $(PROGRAM)
-	cp $(PROGRAM) ../../bin -rf
+	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS)
+	$(STRIP) $(TARGET)
+	cp $(TARGET) ../../bin -rf
 else # C++ file
 	$(CXX) -o $(PROGRAM) $(OBJS) $(LDFLAGS)
 endif

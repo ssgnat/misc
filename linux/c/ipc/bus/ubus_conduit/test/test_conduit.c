@@ -236,7 +236,7 @@ static void
 test_client_register_event(void **state)
 {
 
-    assert_int_equal(cdt_cli_register_events(clievents, cli_event_callback), 0);
+    assert_int_equal(cdt_cli_register_events(clievents, ARRAY_SIZE(clievents), cli_event_callback), 0);
 
     
     return ;
@@ -246,7 +246,7 @@ static void
 test_server_register_event(void **state)
 {
 
-    assert_int_equal(cdt_srv_register_events(srvevents, srv_event_callback), 0);
+    assert_int_equal(cdt_srv_register_events(srvevents, ARRAY_SIZE(srvevents), srv_event_callback), 0);
 
     
     return ;
