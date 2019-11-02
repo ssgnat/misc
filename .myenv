@@ -1,0 +1,20 @@
+
+function cvim()
+{
+    touch $1
+    echo "/*************************************************
+Copyright (C), 2019-2099, Horzon Info. Co.,Ltd.
+File name:      $1
+Author:         tangss
+Version:        1.0
+Date:           `date +%F`
+Description:
+Others:
+**************************************************/
+
+#include <stdio.h>
+
+
+"> $1
+    vim +100 $1
+}
