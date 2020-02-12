@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -84,9 +84,9 @@ sys/endian.h
 machine/endian.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_common.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubus_common.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.c
 sys/socket.h
 -
 sys/stat.h
@@ -112,9 +112,9 @@ libubox/usock.h
 libubox/list.h
 -
 ubusd.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.h
 libubox/list.h
 -
 libubox/uloop.h
@@ -122,21 +122,21 @@ libubox/uloop.h
 libubox/blobmsg.h
 -
 ubus_common.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_common.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubus_common.h
 ubusd_id.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_id.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_id.h
 ubusd_obj.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_obj.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_obj.h
 ubusmsg.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusmsg.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_event.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_event.c
 arpa/inet.h
 -
 ubusd.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_id.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_id.c
 stdio.h
 -
 stdlib.h
@@ -148,35 +148,35 @@ fcntl.h
 libubox/avl-cmp.h
 -
 ubusmsg.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusmsg.h
 ubusd_id.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_id.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_id.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_id.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_id.h
 libubox/avl.h
 -
 stdint.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_obj.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_obj.c
 ubusd.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.h
 ubusd_obj.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_obj.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_obj.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_obj.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_obj.h
 ubusd_id.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_id.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_id.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_proto.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_proto.c
 arpa/inet.h
 -
 unistd.h
 -
 ubusd.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusmsg.h
 stdint.h
 -
 libubox/blob.h

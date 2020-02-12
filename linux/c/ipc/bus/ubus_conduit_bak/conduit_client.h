@@ -26,78 +26,70 @@
 #define _CONDUIT_CLIENT_H_
 
 
-#ifndef _DEBUGLOG_H
-#define _DEBUGLOG_H
+//#endif
+#define DEBUG
+#define ANDROID_PLATFORM
 
-#define ESC_START     "\033["
-#define ESC_END       "\033[0m"
-#define COLOR_FATAL   "31;40;5m"
-#define COLOR_ALERT   "31;40;1m"
-#define COLOR_CRIT    "31;40;1m"
-#define COLOR_ERROR   "31;40;1m"
-#define COLOR_WARN    "33;40;1m"
-#define COLOR_NOTICE  "34;40;1m"
-#define COLOR_INFO    "32;40;1m"
-#define COLOR_DEBUG   "36;40;1m"
-#define COLOR_TRACE   "37;40;1m"
+#define LOG_TAG "CDT_CLI_SO"
 
-#define Msg_Info(format, args...) (printf( ESC_START COLOR_INFO \
-        "[INFO]-[%s]-[%d]:" format ESC_END,  __FUNCTION__ , __LINE__, ##args))
-// #define Msg_Debug(format, args...)
+#ifdef DEBUG
+    #ifdef ANDROID_PLATFORM
+        #include <android/log.h>
+        #define LOGD(...) ((void)__android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__))
+        #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__))
+        #define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, LOG_TAG, __VA_ARGS__))
+        #define LOGE(...) ((void)__android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__))
+    #else
+        #define LOGI(format, args...) (printf( ESC_START COLOR_INFO \
+            "[INFO]-[%s]-[%d]:" format ESC_END,  __FUNCTION__ , __LINE__, ##args))
+        #define LOGD(format, args...) (printf( ESC_START COLOR_DEBUG \
+            "[DEBUG]-[%s]-[%d]:" format ESC_END "\n", __FUNCTION__ , __LINE__, ##args))
+        #define LOGW(format, args...) (printf( ESC_START COLOR_WARN \
+            "[WARN]-[%s]-[%d]:" format ESC_END "\n",  __FUNCTION__ , __LINE__, ##args))
+        #define LOGE(format, args...) \
+        (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%d]:" \
+             format ESC_END "\n", __FUNCTION__ , __LINE__, ##args))
 
-#define Msg_Debug(format, args...) (printf( ESC_START COLOR_DEBUG \
-        "[DEBUG]-[%s]-[%d]:" format ESC_END, __FUNCTION__ , __LINE__, ##args))
-#define Msg_Warn(format, args...) (printf( ESC_START COLOR_WARN \
-        "[WARN]-[%s]-[%d]:" format ESC_END,  __FUNCTION__ , __LINE__, ##args))
-#define Msg_Error(format, args...) \
-    (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%d]:" \
-             format ESC_END, __FUNCTION__ , __LINE__, ##args))
-
-#define Msg_Info_L(format, args...) \
-    (printf( ESC_START COLOR_INFO "[INFO]-[%s]-[%s]-[%d]:" format ESC_END, \
-         __FILE__, __FUNCTION__ , __LINE__, ##args))
-
-#define Msg_Debug_L(format, args...) \
-    (printf( ESC_START COLOR_DEBUG "[DEBUG]-[%s]-[%s]-[%d]:" \
-             format ESC_END, __FILE__, __FUNCTION__ , __LINE__, ##args))
-
-#define Msg_Warn_L(format, args...) \
-    (printf( ESC_START COLOR_WARN "[WARN]-[%s]-[%s]-[%d]:" format ESC_END, \
-             __FILE__, __FUNCTION__ , __LINE__, ##args))
-
-#define Msg_Error_L(format, args...) \
-    (printf( ESC_START COLOR_ERROR "[ERROR]-[%s]-[%s]-[%d]:" format ESC_END, \
-             __FILE__, __FUNCTION__ , __LINE__, ##args))
+    #endif
+#else
+    #define LOGD(...) NOT ANDROID ? PLEASE RELEASE ME;
+    #define LOGI(...);
+    #define LOGW(...);
+    #define LOGE(...);
 #endif
 
-#define MAX_BUFFER_LEN 102400
-#define MAX_EVENTS 8
-#define MAX_EVENT_LEN 64
+#define MAX_EVENTS      8
+#define MAX_EVENT_LEN   64
 
-typedef void (*request_callback)(void *data, int rc, const char *content);
 
-typedef void (*event_callback)(const char *type, const char *str);
+typedef void (*response_callback)(void *auxiliary, int resp_code,
+        const char *resp_content);
+
+typedef void (*event_callback)(const char *event, const char *resp_content);
 
 #ifndef CUSTOM_SYNC_PARAM_STRUCT
 #define CUSTOM_SYNC_PARAM_STRUCT
 typedef struct {
-	request_callback  callback;
-	void             *data;  // callback passthrought data
-}request_param_t;
+	response_callback  callback;
+
+    //auxiliary is not sent out, and when the responded as an argument of
+    //response function, refer to the response_callback.it's recommended NULL, 
+    //if not sure.
+	void              *auxiliary;
+}response_handler_t;
 #endif
 
 //called once in the whole process lifecycle
 int cdt_cli_start(void);
 
-int cdt_cli_request(request_param_t param, const char *module,
+int cdt_cli_request(response_handler_t param, const char *module,
         const char *method, const char *content);
 
 //register events only called once in the whole process lifecycle
-//const char *events
-// ={"sdcard","usbin","usbout"}
+//const char *events ={"sdcard","usbin","usbout"}
 int	cdt_cli_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        event_callback callback);
-int	cdt_cli_send_event(const char *event, const char *jsonstring);
+        int nevents, event_callback callback);
+int	cdt_cli_send_event(const char *event, const char *content);
 
 int cdt_cli_stop(void);
 

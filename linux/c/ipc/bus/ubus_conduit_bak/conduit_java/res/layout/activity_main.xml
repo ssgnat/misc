@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/startconduit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start" />
+
+    <Button
+        android:id="@+id/stopconduit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log" />
+
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/logtip"
+        android:textColor="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/eventstolisten"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/eventstips" />
+
+        <Button
+            android:id="@+id/startlistenevent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/monevent" />
+
+        <EditText
+            android:id="@+id/eventinput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/eventtips" />
+
+        <EditText
+            android:id="@+id/eventmsg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/eventconenttips" />
+
+        <Button
+            android:id="@+id/sendevent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/sendevent" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/callmodulename"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="@string/modulenametips" />
+
+            <EditText
+                android:id="@+id/callmethodname"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="@string/moduletips" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/callcontent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/sendcontenttips" />
+
+        <Button
+            android:id="@+id/call"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/normalcall" />
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>

@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/ubox.dir/avl.c.o"
   "CMakeFiles/ubox.dir/avl-cmp.c.o"
   "CMakeFiles/ubox.dir/blob.c.o"
@@ -17,6 +17,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
-  include(CMakeFiles/ubox.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang C)
+  INCLUDE(CMakeFiles/ubox.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

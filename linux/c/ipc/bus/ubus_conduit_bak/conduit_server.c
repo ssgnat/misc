@@ -24,12 +24,13 @@
 #define MAX_UNIXPATH_LEN 128
 #endif
 
-#ifndef MAX_SOCKET_BUF_LEN
-#define MAX_SOCKET_BUF_LEN 10240 //10k
-#endif
 #ifndef MAX_RETRIES
 #define MAX_RETRIES 10
 #endif
+
+#define MAX_BLOB_BUF 10
+
+#define MAX_METHOD_NAME_KEY_LEN (3*MAX_METHOD_NAME_LEN)
 
 typedef struct blob_buf             blob_buf_t;
 typedef struct blob_attr            blob_attr_t;
@@ -48,7 +49,7 @@ enum {
 
 enum
 {
-	UBUS_APP_ERROR_BASE=-100,
+	UBUS_APP_ERROR_BASE=-MAX_BLOB_BUF,
 
 	UBUS_APP_ERROR_INTERNAL_NULLPOINTER,
 	UBUS_APP_ERROR_PARSEREQ,
@@ -64,9 +65,12 @@ enum
 	UBUS_APP_OK=0,
 };
 
+
+static int              _event_buf_index = 0;
 static pthread_t       _ubus_loop_tid = -1;
-static ubus_context_t *_ctx;
-static blob_buf_t      _buf;
+static ubus_context_t *_ubus_context;
+static blob_buf_t      _blob_buf;
+static blob_buf_t      _blob_event;
 
 static const blobmsg_policy_t policies[] =
     {[MY_DATA] = {.name="data", .type = BLOBMSG_TYPE_STRING},};
@@ -76,7 +80,7 @@ static const int methods_max = MAX_OBJECTS * MAX_METHODS;
 typedef struct {
 	const char	key[MAX_METHOD_NAME_LEN+MAX_OBJ_NAME_LEN];
 	const char 	method_name[MAX_METHOD_NAME_LEN];
-	srv_module_process_func 	fun;
+	request_callback 	fun;
 } method_t;
 
 static method_t _methods[MAX_OBJECTS * MAX_METHODS];
@@ -84,24 +88,24 @@ static ubus_event_handler_st _listerner;
 static event_callback _event_callback;
 
 static void
-_reply_int(ubus_context_t *_ctx, ubus_request_data_t *req, int ret,
+_reply_int(ubus_context_t *_ubus_context, ubus_request_data_t *req, int ret,
         const char* datajson)
 {
-	blob_buf_init(&_buf, 0);
-	blobmsg_add_u32(&_buf, "rc", ret);
+	blob_buf_init(&_blob_buf, 0);
+	blobmsg_add_u32(&_blob_buf, "rc", ret);
 	if (datajson != NULL) {
-		blobmsg_add_string(&_buf, "data", datajson);
+		blobmsg_add_string(&_blob_buf, "data", datajson);
     }
 
-	ubus_send_reply(_ctx, req, _buf.head);
+	ubus_send_reply(_ubus_context, req, _blob_buf.head);
 }
 
 
 static int
-_response(ubus_context_t *_ctx, ubus_object_t *obj, ubus_request_data_t *req,
+_response(ubus_context_t *_ubus_context, ubus_object_t *obj, ubus_request_data_t *req,
         const char *method, blob_attr_t *msg)
 {
-	Msg_Debug(" START method:%s\n",method);
+	LOGD(" START method:%s\n",method);
 
 	int   len = 0;
 	int   rc = 0;
@@ -109,23 +113,23 @@ _response(ubus_context_t *_ctx, ubus_object_t *obj, ubus_request_data_t *req,
 	char *str = NULL;
 
 	char retstr[MAX_RESULT_BUFFER_SIZE] = {0};
-	char tmpstr[MAX_RESULT_BUFFER_SIZE] = {0};
+	char tmpstr[MAX_METHOD_NAME_KEY_LEN] = {0};
 
 	blob_attr_t *tb[_MY_MAX];
 
-	Msg_Debug("START msg:%s msglen:%d\n",(char*)blob_data(msg),blob_len(msg));
+	LOGD("START msg:%s msglen:%d\n",(char*)blob_data(msg),blob_len(msg));
 	blobmsg_parse(policies, _MY_MAX, tb, blob_data(msg), blob_len(msg));
-	Msg_Debug("START blobmsg_get_string:%s\n",blobmsg_get_string(msg));
+	LOGD("START blobmsg_get_string:%s\n",blobmsg_get_string(msg));
 
 	if (tb[MY_DATA] == NULL) {
-		Msg_Error(" START tb[MY_DATA] is NULL\n");
+		LOGE(" START tb[MY_DATA] is NULL\n");
 		return UBUS_APP_ERROR_INTERNAL_NULLPOINTER;
 	}
 
 	str = blobmsg_get_string(tb[MY_DATA]);
-	Msg_Debug("str:%s \n",str);
+	LOGD("str:%s \n",str);
 	if (!str) {
-		Msg_Error("blobmsg_get_string error error:%d\n", errno);
+		LOGE("blobmsg_get_string error error:%d\n", errno);
 		return UBUS_APP_ERROR_PARSEREQ;
 	}
 
@@ -133,22 +137,23 @@ _response(ubus_context_t *_ctx, ubus_object_t *obj, ubus_request_data_t *req,
 	memmove(tmpstr, obj->name,len);
 	memmove((tmpstr+len), method, strlen(method));
 
-	Msg_Debug("tmpstr:%s \n",tmpstr);
+	LOGD("tmpstr:%s \n",tmpstr);
 
-	tmpstr[MAX_RESULT_BUFFER_SIZE-1]=0;
-	for(i = 0; i < methods_max; i++)
-	{
-
-		Msg_Debug("_methods[i].key:%s --\n",
-                _methods[i].key);
+	tmpstr[MAX_METHOD_NAME_KEY_LEN-1]=0;
+	for (i = 0; i < methods_max; i++) {
 		if (!strcmp(_methods[i].key, tmpstr)) {
+            if (_methods[i].fun == NULL) {
+                LOGE("---!!!!!!!!key:%s fun:%p skip!!!!!!!!!!",_methods[i].key,
+                        _methods[i].fun);
+                continue;
+            }
 			rc = _methods[i].fun(str, retstr);
-			_reply_int(_ctx, req, rc, retstr);
+			_reply_int(_ubus_context, req, rc, retstr);
 			break;
 		}
 	}
 
-	Msg_Debug(" END\n");
+	LOGD(" END\n");
 	return UBUS_APP_OK;
 }
 
@@ -162,7 +167,7 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
     int   n = -1;
     int   len = -1;
 	char *tmp = NULL;
-	char  retstr[MAX_RESULT_BUFFER_SIZE]={0};
+	char  retstr[MAX_METHOD_NAME_KEY_LEN]={0};
 
 	ubus_object_type_t *tmptype = NULL;
     ubus_method_t      *methods = NULL;
@@ -179,29 +184,36 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 	for (j = 0; j < n_methods; j++) {
 		n=-1;
 
-		len =  strlen(module_name);
+        memset(retstr, 0, MAX_METHOD_NAME_KEY_LEN);
+
+		LOGD("-module_methods[%d].fun :%p name:%s \n", j,
+                    module_methods[j].fun, module_name);
+
+		len = strlen(module_name);
 		memmove(retstr, module_name, len);
 		memmove((retstr+len), module_methods[j].method_name,
                 strlen(module_methods[j].method_name));
-		retstr[MAX_RESULT_BUFFER_SIZE-1]=0;
+		retstr[MAX_METHOD_NAME_KEY_LEN-1]=0;
+
 
 		for (i = 0; i < methods_max; i++) {
 			if (_methods[i].key[0] == 0 ) {
 				if (n < 0){
-					n=i;
+					n = i;
                 }
-				continue;
+                break;
 			}
 
 			if (!strcmp(_methods[i].key, retstr)) {
-				Msg_Debug("%s has been registered, please check mannually!\n",
+				LOGD("%s has been registered, please check mannually!\n",
                         module_name);
 				return UBUS_APP_ERROR_EXISTED;
 			}
 		}
 
 		if (n < methods_max && n >= 0) {
-			Msg_Debug("module_methods[j].fun :%p \n", module_methods[j].fun);
+			LOGD("module_methods[%d].fun :%p key:%s \n", j,
+                    module_methods[j].fun, retstr);
 
 			strcpy((char*)(_methods[n].key), retstr);
 			strcpy((char*)(_methods[n].method_name),
@@ -210,7 +222,7 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 		}
 	}
 
-	Msg_Debug("i:%d j:%d custom_objec*t_functions_max:%d, n_methods:%d\n",
+	LOGD("i:%d j:%d custom_objec*t_functions_max:%d, n_methods:%d\n",
             i, j, methods_max, n_methods);
 
 	methods = (ubus_method_t*)malloc(sizeof(ubus_method_t) * n_methods);
@@ -232,20 +244,39 @@ cdt_srv_add_module(const char* module_name, module_method_t* module_methods,
 
 	i = strlen(module_name) + 1;
 	i = i > MAX_OBJ_NAME_LEN? MAX_OBJ_NAME_LEN : i;
-	Msg_Debug("module_name:%s length :%d\n", module_name,i-1);
+	LOGD("module_name:%s length :%d\n", module_name,i-1);
 
 	object->name = (char*)malloc(i);
 	memset((char*)object->name, 0, i);
 	memmove((char*)object->name, module_name, i);
+
 	tmptype = (ubus_object_type_t *)malloc(sizeof(ubus_object_type_t));
 	tmptype->name = object->name;
 	tmptype->methods = methods;
 	tmptype->n_methods = n_methods;
 	tmptype->id = 0;
+
 	object->type = tmptype;
 	object->methods = methods;
 	object->n_methods = n_methods;
-	ubus_add_object(_ctx, object);
+	ubus_add_object(_ubus_context, object);
+
+    /*==================
+    static const struct ubus_method test_methods[] = {
+        UBUS_METHOD("helloworld", test_hello, hello_policy),
+    };
+
+    static struct ubus_object_type test_object_type =
+        UBUS_OBJECT_TYPE("test_ubus", test_methods);
+
+    static struct ubus_object test_object = {
+        .name = "test_ubus",
+        .type = &test_object_type,
+        .methods = test_methods,
+        .n_methods = ARRAY_SIZE(test_methods)
+    };
+    //======================================
+    */
 
 	return UBUS_APP_OK;
 
@@ -268,40 +299,54 @@ _ubus_probe_device_event(ubus_context_t *context,
     }
 
 	str = blobmsg_format_json(msg, true);
-	Msg_Info("{ \"%s\": %s }\n", type, str);
+	LOGI("{ \"%s\": %s }\n", type, str);
 	_event_callback(type, str);
 	free(str);
 }
 static void*
 _uloop_run_thread(void *arg)
 {
-	uloop_run();
+    if (_ubus_context) {
+        ubus_add_uloop(_ubus_context);
+        uloop_run();
+    } else {
+        LOGE("_ubus_context is NULL");
+    }
 
-    Msg_Debug(" QUIT ULOOP TREHAD!!!!!!!");
+    LOGD(" QUIT ULOOP TREHAD!!!!!!!");
     //uloop_done();
 
     pthread_exit(0);
 	return NULL;
 }
 
-static int
-_cdt_srv_run(void)
+int
+cdt_srv_run(void)
 {
-	ubus_add_uloop(_ctx);
-	pthread_create(&_ubus_loop_tid, NULL, _uloop_run_thread, NULL);
 
+    if (_ubus_context) {
+        ubus_add_uloop(_ubus_context);
+        uloop_run();
+    } else {
+        LOGE("_ubus_context is NULL");
+    }
 	return 0;
 }
 
 int
 cdt_srv_start(void)
 {
+    LOGI("VERSION: %s %s", __DATE__, __TIME__);
     int i = 0;
-   
+    char cmd_buf[256] = {0};
+
 	signal(SIGPIPE, SIG_IGN);
 
-	if (_ctx) {
-		Msg_Error("has been started! don't call multi-times");
+    sprintf(cmd_buf, "chmod 777 %s", UBUSD_SOCKET_PATH);
+    system(cmd_buf);
+
+	if (_ubus_context) {
+		LOGE("has been started! don't call multi-times");
 		return -1;
 	}
 
@@ -314,15 +359,13 @@ cdt_srv_start(void)
 
 	uloop_init();
 
-	_ctx = ubus_connect(UBUSD_SOCKET_PATH);
-	if (!_ctx) {
-		Msg_Error("uloop_connect error UBUSD_SOCKET_PATH:%s\n",
+	_ubus_context = ubus_connect(UBUSD_SOCKET_PATH);
+	if (!_ubus_context) {
+		LOGE("uloop_connect error UBUSD_SOCKET_PATH:%s\n",
                 UBUSD_SOCKET_PATH);
 		uloop_done();
 		return -1;
 	}
-
-    _cdt_srv_run();
 
 	return UBUS_APP_OK;
 }
@@ -335,29 +378,21 @@ cdt_srv_stop(void)
     int  rval = -1;
     int *exit_code = NULL;
 
-    uloop_done();
-    Msg_Debug("");
     uloop_end();
     uloop_done();
-    Msg_Debug("");
 
-    if (_ubus_loop_tid > 0) {
-        rval = pthread_join(_ubus_loop_tid, (void **)&exit_code);
-        printf("%s return:%p\n", __FUNCTION__, exit_code);
+    LOGD("");
+	if (_ubus_context) {
+        ubus_free(_ubus_context);
     }
-
-    Msg_Debug("");
-	if (_ctx) {
-        ubus_free(_ctx);
-    }
-	_ctx = NULL;
+	_ubus_context = NULL;
 
     return rval;
 }
 
 int
 cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
-        event_callback callback)
+        int nevents, event_callback callback)
 {
 	int ret = 0;
     int i = 0;
@@ -365,37 +400,100 @@ cdt_srv_register_events(const char events[MAX_EVENTS][MAX_EVENT_LEN],
     if (_event_callback ==  NULL) {
  	    _event_callback = callback;
     } else {
-        Msg_Error("cdt_cli_register_events has been called before,"
+        LOGE("cdt_cli_register_events has been called before,"
                 "only called once in the whole process lifecycle.");
         return -1;
     }
 	/* 注册特定event的_listerner。多个event可以使用同一个_listerner */
 	memset(&_listerner, 0, sizeof(_listerner));
 	_listerner.cb = _ubus_probe_device_event;
-	// Msg_Info("register event:%s\n",events[0]);
+	// LOGI("register event:%s\n",events[0]);
 
-	for (i = 0; i < MAX_EVENTS; i++) {
+	for (i = 0; i < nevents; i++) {
 		if (events[i][0] == 0) {
-			Msg_Debug("start register event:%s skip \n",events[i]);
+			LOGD("start register event:%s skip \n",events[i]);
 			continue;
 		}
 
-		Msg_Info("tangss register event:%s\n",events[i]);
-		ret = ubus_register_event_handler(_ctx, &_listerner, events[i]);
+		LOGI("register event:%s\n",events[i]);
+		ret = ubus_register_event_handler(_ubus_context, &_listerner, events[i]);
 		if (ret) {
-			Msg_Error("start register event error :%s",events[i]);
+			LOGE("start register event error :%s",events[i]);
+            return -1;
 		}
 	}
 
 	return 0;
 }
-int
-cdt_srv_send_event(int type, int devid, const char* event, const char* jsonstr)
-{
-	static blob_buf_t b;
-	blobmsg_add_u32(&b, "rc", 0);
-	blobmsg_add_string(&b, "data", jsonstr);
 
-	return ubus_send_event(_ctx, event, b.head);
+int
+cdt_srv_send_event(const char *event, const char *content)
+{
+
+#ifdef DEBUG
+    char *format = "../../bin/hzbus send -s %s %s \'{\"rc\":0, \"data\":\"%s\"}\'";
+#else
+    char *format = "hzbus send -s %s %s \'{\"rc\":0, \"data\":\"%s\"}\'";
+#endif
+
+    char buf[20480] = {0};
+	if (event == NULL) {
+        return -1;
+    }
+
+    if (content == NULL) {
+        content  = "";
+    }
+
+    sprintf(buf, format, UBUSD_SOCKET_PATH, event, content);
+    buf[20479] = 0;
+    LOGD("event buf command:%s", buf);
+
+    system(buf);
+
+    return 0;
 }
 
+/*
+int
+cdt_srv_send_event(const char *event, const char *content)
+{
+    pid_t pid;
+    int   rval;
+
+	if (event == NULL) {
+        return -1;
+    }
+
+    pid = fork();
+    if (!pid) {
+
+        uloop_done();
+
+        uloop_init();
+
+        _ubus_context = ubus_connect(UBUSD_SOCKET_PATH);
+        if (!_ubus_context)
+        {
+            printf("ubus connect failed\n");
+            return -1;
+        }
+
+
+        blob_buf_init(&_blob_event, 0);
+        blobmsg_add_u32(&_blob_event, "rc", 0);
+        blobmsg_add_string(&_blob_event, "data", content);
+        rval = ubus_send_event(_ubus_context, event, _blob_event.head);
+
+        uloop_done();
+	    if (_ubus_context) {
+		    ubus_free(_ubus_context);
+        }
+
+        return 0;
+    } else {
+
+        return 0;
+    }
+}
+*/

@@ -5,3 +5,7 @@ server as send(continue)
 
 21 sep 2019
 once call uloop_run, send_event excepted on server
+
+
+25 dec 2019
+fixme: blob_buf is locally variable

@@ -14,9 +14,10 @@
 #define LOGD printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__)
 #else
 #define LOGD
-#endif 
+#endif
 #define ARRAY_SIZE(arg) (sizeof(arg)/sizeof(arg[0]))
 
+#define CUSTOM_OBJECT_NAME_LEN_MAX 64
 
 static volatile int c_cnt = 0;
 static volatile int s_cnt = 0;
@@ -69,6 +70,8 @@ process_func_1(const char *req, char res[CUSTOM_OBJECT_NAME_LEN_MAX])
 {
     //assert_string_equal(req, "test_client_1");
     memmove(res, "test_server_1", strlen("test_server_1")+1);
+
+    sleep(2);
 
     return 0;
 }
@@ -229,14 +232,28 @@ static void
 test_client_call(void **state)
 {
     printf("cs - time:%d\n", c_cnt++);
-    cdt_cli_request(request1, "module1", "m1", "test_client_1");
-    printf("cs - time:%d\n", c_cnt++);
     cdt_cli_request(request2, "module2", "m2", "test_client_2");
 
     return ;
 }
 
+static void
+test_client_slow_call(void **state)
+{
+    printf("cs - time:%d\n", c_cnt++);
+    cdt_cli_request_timeout(request1, "module1", "m1", "test_client_1",6000);
 
+    return ;
+}
+
+static void
+test_client_slow_call_timeout(void **state)
+{
+    printf("cs - time:%d\n", c_cnt++);
+    cdt_cli_request_timeout(request1, "module1", "m1", "test_client_1", 1000);
+
+    return ;
+}
 static void
 test_client_send_event(void **state)
 {
@@ -279,6 +296,30 @@ test_server_stop(void **state)
     return ;
 }
 
+#include <pthread.h>
+void
+call_client_func(void *argv)
+{
+    int n = *(int*)(argv);
+    test_client_start(NULL);
+    while (c_cnt < 15000) {
+        test_client_call(NULL);
+    }
+    test_client_stop(NULL);
+}
+
+void
+call_client_slow_func(void *argv)
+{
+    int n = *(int*)(argv);
+    test_client_start(NULL);
+    while (c_cnt < 15000) {
+        test_client_slow_call(NULL);
+        test_client_slow_call_timeout(NULL);
+    }
+    test_client_stop(NULL);
+}
+
 int main(int argc, char *argv[])
 {
 #ifdef TEST_CALL
@@ -286,13 +327,33 @@ int main(int argc, char *argv[])
     printf("=============================================\n");
     printf("=================TEST_CALL CLIENT============\n");
     printf("=============================================\n");
+#define MAX_CNT 1
+    pthread_t pids[MAX_CNT] = {0};
+    int       i = 0;
 
-    sleep(5);
     test_client_start(NULL);
-    while (c_cnt < 5000) {
-        test_client_call(NULL);
-        //printf("TIME:%d\n", c_cnt++);
+    sleep(1);
+    for(i = 0; i < MAX_CNT; i++) {
+       int ret = 0;
+       /*
+       if(i % 2 == 0) {
+        ret = pthread_create(&pids[i], NULL, call_client_slow_func, &i);
+       } else {
+        ret = pthread_create(&pids[i], NULL, call_client_func, &i);
+       }
+       */
+
+      ret = pthread_create(&pids[i], NULL, call_client_slow_func, &i);
+       if (ret != 0) {
+           exit(0);
+           return 0;
+       }
     }
+
+    for(i = 0; i < MAX_CNT; i++){
+        pthread_join(pids[i], NULL);
+    }
+
     test_client_stop(NULL);
     return 0;
 #else

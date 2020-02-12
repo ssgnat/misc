@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -190,7 +190,7 @@ stdint.h
 libubox/blob.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/conduit_client.c
+/home/tangshishan/source/hisi3798_442/nas/device/hisilicon/bigfish/horzon/c/ipc/bus/ubus_conduit/conduit_client.c
 stdio.h
 -
 stdlib.h
@@ -217,14 +217,18 @@ libubox/ustream.h
 -
 libubox/blobmsg_json.h
 -
+pthread.h
+-
 libubus.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/libubus.h
+/home/tangshishan/source/hisi3798_442/nas/device/hisilicon/bigfish/horzon/c/ipc/bus/ubus_conduit/libubus.h
 conduit_common.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/conduit_common.h
+/home/tangshishan/source/hisi3798_442/nas/device/hisilicon/bigfish/horzon/c/ipc/bus/ubus_conduit/conduit_common.h
 conduit_client.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/conduit_client.h
+/home/tangshishan/source/hisi3798_442/nas/device/hisilicon/bigfish/horzon/c/ipc/bus/ubus_conduit/conduit_client.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/conduit_client.h
+/home/tangshishan/source/hisi3798_442/nas/device/hisilicon/bigfish/horzon/c/ipc/bus/ubus_conduit/conduit_client.h
+android/log.h
+-
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/conduit_common.h
+/home/tangshishan/source/hisi3798_442/nas/device/hisilicon/bigfish/horzon/c/ipc/bus/ubus_conduit/conduit_common.h
 

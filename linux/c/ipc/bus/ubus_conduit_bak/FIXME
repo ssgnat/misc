@@ -1,0 +1,7 @@
+
+on the scense:
+client as receiver
+server as send(continue)
+
+21 sep 2019
+once call uloop_run, send_event excepted on server

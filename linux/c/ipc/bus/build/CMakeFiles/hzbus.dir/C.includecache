@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -82,9 +82,9 @@ sys/endian.h
 machine/endian.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-internal.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-internal.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-io.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-io.c
 sys/types.h
 -
 sys/uio.h
@@ -104,31 +104,31 @@ libubox/blob.h
 libubox/blobmsg.h
 -
 libubus.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.h
 libubus-internal.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-internal.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-internal.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-obj.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-obj.c
 libubus.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.h
 libubus-internal.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-internal.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-internal.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-req.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-req.c
 unistd.h
 -
 libubus.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.h
 libubus-internal.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-internal.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-internal.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-sub.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-sub.c
 libubus.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.h
 libubus-internal.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-internal.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-internal.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.c
 sys/types.h
 -
 sys/socket.h
@@ -140,13 +140,13 @@ libubox/blob.h
 libubox/blobmsg.h
 -
 libubus.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.h
 libubus-internal.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus-internal.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus-internal.h
 ubusmsg.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusmsg.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubus.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubus.h
 libubox/avl.h
 -
 libubox/list.h
@@ -158,13 +158,13 @@ libubox/uloop.h
 stdint.h
 -
 ubusmsg.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusmsg.h
 ubus_common.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_common.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubus_common.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_common.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubus_common.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/ubusmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusmsg.h
 stdint.h
 -
 libubox/blob.h

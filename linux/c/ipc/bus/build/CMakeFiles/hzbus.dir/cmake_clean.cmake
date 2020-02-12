@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/hzbus.dir/libubus.c.o"
   "CMakeFiles/hzbus.dir/libubus-io.c.o"
   "CMakeFiles/hzbus.dir/libubus-obj.c.o"
@@ -9,6 +9,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
-  include(CMakeFiles/hzbus.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang C)
+  INCLUDE(CMakeFiles/hzbus.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

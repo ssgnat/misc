@@ -44,6 +44,7 @@ LDFLAGS += -lhzbus
 LDFLAGS += -lubox
 LDFLAGS += -lblobmsg_json
 LDFLAGS += -L../../bin/lib
+LDFLAGS += -L../../../../../conduit/
 
 ## Implict Section: change the following only when necessary.
 ##=============================================================================

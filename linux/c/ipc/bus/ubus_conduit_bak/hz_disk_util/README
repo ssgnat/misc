@@ -1,0 +1,5 @@
+
+
+hz_disk_util format /dev/block/sdb hdd
+hz_disk_util getdeviceid /dev/block/sdb hdd
+hz_disk_util setdeviceid /dev/block/sdb hdd

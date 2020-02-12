@@ -1,2 +1,2 @@
-/usr/bin/ar qc libblobmsg_json_s.a  CMakeFiles/blobmsg_json_s.dir/blobmsg_json.c.o
-/usr/bin/ranlib libblobmsg_json_s.a
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-ar cr libblobmsg_json_s.a  CMakeFiles/blobmsg_json_s.dir/blobmsg_json.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-ranlib libblobmsg_json_s.a

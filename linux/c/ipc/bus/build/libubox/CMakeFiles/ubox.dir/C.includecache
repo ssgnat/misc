@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.c
 string.h
 -
 avl-cmp.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl.c
 stdbool.h
 -
 stddef.h
@@ -26,23 +26,23 @@ time.h
 string.h
 -
 avl.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl.h
 list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl.h
 stddef.h
 -
 stdbool.h
 -
 list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blob.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blob.c
 blob.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blob.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blob.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blob.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blob.h
 stdbool.h
 -
 stdlib.h
@@ -56,27 +56,27 @@ stdio.h
 errno.h
 -
 utils.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.c
 blobmsg.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.h
 stdarg.h
 -
 blob.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blob.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blob.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h
 stddef.h
 -
 stdbool.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/md5.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/md5.c
 blob.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blob.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blob.h
 sys/types.h
 -
 sys/stat.h
@@ -86,43 +86,43 @@ fcntl.h
 unistd.h
 -
 md5.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/md5.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/md5.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/md5.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/md5.h
 stdint.h
 -
 stddef.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/runqueue.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/runqueue.c
 string.h
 -
 stdio.h
 -
 runqueue.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/runqueue.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/runqueue.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/runqueue.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/runqueue.h
 list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h
 safe_list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h
 uloop.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/safe_list.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/safe_list.c
 safe_list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h
 stdbool.h
 -
 list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h
 utils.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/uloop.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/uloop.c
 sys/time.h
 -
 sys/types.h
@@ -144,9 +144,9 @@ fcntl.h
 stdbool.h
 -
 uloop.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
 utils.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.h
 sys/event.h
 -
 sys/epoll.h
@@ -154,7 +154,7 @@ sys/epoll.h
 sys/wait.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
 sys/time.h
 -
 sys/types.h
@@ -166,9 +166,9 @@ stdint.h
 signal.h
 -
 list.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/usock.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/usock.c
 sys/types.h
 -
 sys/socket.h
@@ -190,11 +190,11 @@ string.h
 stdbool.h
 -
 usock.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/usock.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/usock.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/usock.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/usock.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/ustream-fd.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/ustream-fd.c
 unistd.h
 -
 errno.h
@@ -202,9 +202,9 @@ errno.h
 stdio.h
 -
 ustream.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/ustream.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/ustream.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/ustream.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/ustream.c
 stdlib.h
 -
 string.h
@@ -216,17 +216,17 @@ stdio.h
 stdarg.h
 -
 ustream.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/ustream.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/ustream.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/ustream.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/ustream.h
 stdarg.h
 -
 uloop.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/uloop.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.c
 utils.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.h
 stdarg.h
 -
 stdlib.h
@@ -236,7 +236,7 @@ stdio.h
 mach/mach_time.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.h
 sys/types.h
 -
 sys/time.h
@@ -260,11 +260,11 @@ sys/endian.h
 machine/endian.h
 -
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/vlist.c
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/vlist.c
 vlist.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/vlist.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/vlist.h
 
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/vlist.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/vlist.h
 avl.h
-/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl.h
+/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl.h
 

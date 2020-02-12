@@ -1,32 +1,34 @@
 # The set of languages for which implicit dependencies are needed:
-set(CMAKE_DEPENDS_LANGUAGES
+SET(CMAKE_DEPENDS_LANGUAGES
   "C"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd.c" "/home/tangss/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd.c.o"
-  "/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_event.c" "/home/tangss/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_event.c.o"
-  "/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_id.c" "/home/tangss/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_id.c.o"
-  "/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_obj.c" "/home/tangss/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_obj.c.o"
-  "/home/tangss/tmp/misc/linux/c/ipc/bus/ubusd_proto.c" "/home/tangss/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_proto.c.o"
+SET(CMAKE_DEPENDS_CHECK_C
+  "/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd.c" "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd.c.o"
+  "/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_event.c" "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_event.c.o"
+  "/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_id.c" "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_id.c.o"
+  "/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_obj.c" "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_obj.c.o"
+  "/home/tangshishan/tmp/misc/linux/c/ipc/bus/ubusd_proto.c" "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/hzbusd.dir/ubusd_proto.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+SET(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_C
+SET(CMAKE_TARGET_DEFINITIONS
+  "DEBUG"
+  "LINUX"
   "UBUS_MAX_MSGLEN=1048576"
-  "UBUS_UNIX_SOCKET=\"/var/run/ubus.sock\""
-  )
-
-# The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../."
+  "UBUS_UNIX_SOCKET=\"/tmp/hzbus.sock\""
   )
 
 # Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox/CMakeFiles/ubox.dir/DependInfo.cmake"
+SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/CMakeFiles/ubox.dir/DependInfo.cmake"
   )
 
-# Fortran module output directory.
-set(CMAKE_Fortran_TARGET_MODULE_DIR "")
+# The include file search paths:
+SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "../."
+  )
+SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

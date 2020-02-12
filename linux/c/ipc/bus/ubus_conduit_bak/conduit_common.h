@@ -48,6 +48,6 @@ const char *SUB_MODULE_TAG_NORMAL_SYNC="synccall"; //normal sync command
 const char *SUB_MODULE_TAG_DETAIL="detail"; //normal sync command
 */
 
-#define HZCUSTOM_METHOD_ARG1 "data"
+#define METHOD_ARG1 "data"
 
 #endif

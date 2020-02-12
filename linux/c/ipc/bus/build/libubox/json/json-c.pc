@@ -1,0 +1,12 @@
+prefix=/home/tangshishan/tmp/misc/linux/c/ipc/bus
+exec_prefix=/home/tangshishan/tmp/misc/linux/c/ipc/bus
+libdir=/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib
+includedir=/home/tangshishan/tmp/misc/linux/c/ipc/bus/include
+
+Name: json-c
+Description: A JSON implementation in C
+Version: 
+Requires:
+Libs.private: 
+Libs: -L${libdir} -ljson-c
+Cflags: -I${includedir} -I${includedir}/json-c

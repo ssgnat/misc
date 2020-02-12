@@ -1,10 +1,10 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/cli.dir/cli.c.o"
-  "hzbus.pdb"
-  "hzbus"
+  "cli.pdb"
+  "cli"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
-  include(CMakeFiles/cli.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang C)
+  INCLUDE(CMakeFiles/cli.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

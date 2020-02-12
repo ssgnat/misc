@@ -1,145 +1,191 @@
-# Install script for directory: /home/tangss/tmp/misc/linux/c/ipc/bus/libubox
+# Install script for directory: /home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox
 
 # Set the install prefix
-if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
-endif()
-string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
+  SET(CMAKE_INSTALL_PREFIX "/home/tangshishan/tmp/misc/linux/c/ipc/bus")
+ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
+STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
 # Set the install configuration name.
-if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
-  if(BUILD_TYPE)
-    string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
+IF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
+  IF(BUILD_TYPE)
+    STRING(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
-  else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
-  endif()
-  message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
-endif()
+  ELSE(BUILD_TYPE)
+    SET(CMAKE_INSTALL_CONFIG_NAME "")
+  ENDIF(BUILD_TYPE)
+  MESSAGE(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
+ENDIF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
 
 # Set the component getting installed.
-if(NOT CMAKE_INSTALL_COMPONENT)
-  if(COMPONENT)
-    message(STATUS "Install component: \"${COMPONENT}\"")
-    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")
-  else()
-    set(CMAKE_INSTALL_COMPONENT)
-  endif()
-endif()
+IF(NOT CMAKE_INSTALL_COMPONENT)
+  IF(COMPONENT)
+    MESSAGE(STATUS "Install component: \"${COMPONENT}\"")
+    SET(CMAKE_INSTALL_COMPONENT "${COMPONENT}")
+  ELSE(COMPONENT)
+    SET(CMAKE_INSTALL_COMPONENT)
+  ENDIF(COMPONENT)
+ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 # Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
+IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  SET(CMAKE_INSTALL_SO_NO_EXE "1")
+ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/libubox" TYPE FILE FILES
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/avl.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blob.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/blobmsg_json.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/json_script.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/list.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/md5.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/runqueue.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/uloop.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/usock.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/ustream.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/utils.h"
-    "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/vlist.h"
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/list.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/safe_list.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/utils.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/runqueue.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/blob.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/md5.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/usock.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/ustream.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/json_script.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/blobmsg_json.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/blobmsg.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/uloop.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/avl.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/avl-cmp.h;/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox/vlist.h")
+  IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+  IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+FILE(INSTALL DESTINATION "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/include/libubox" TYPE FILE FILES
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/list.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/safe_list.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/utils.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/runqueue.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blob.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/md5.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/usock.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/ustream.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/json_script.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blobmsg_json.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/blobmsg.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/uloop.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/avl-cmp.h"
+    "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/vlist.h"
     )
-endif()
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so" AND
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so")
-    file(RPATH_CHECK
+    FILE(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so"
          RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox/libubox.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so" AND
+  ENDIF()
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/libubox.so")
+  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so")
-    endif()
-  endif()
-endif()
+    IF(CMAKE_INSTALL_DO_STRIP)
+      EXECUTE_PROCESS(COMMAND "/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libubox.so")
+    ENDIF(CMAKE_INSTALL_DO_STRIP)
+  ENDIF()
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so"
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so")
+    FILE(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so"
          RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox/libblobmsg_json.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so"
-         OLD_RPATH "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox:/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libblobmsg_json.so")
-    endif()
-  endif()
-endif()
+  ENDIF()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so")
+  IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+  IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+FILE(INSTALL DESTINATION "/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib" TYPE SHARED_LIBRARY FILES "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/libblobmsg_json.so")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so")
+    FILE(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so")
+    IF(CMAKE_INSTALL_DO_STRIP)
+      EXECUTE_PROCESS(COMMAND "/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-strip" "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libblobmsg_json.so")
+    ENDIF(CMAKE_INSTALL_DO_STRIP)
+  ENDIF()
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn"
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so")
+    FILE(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so"
          RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox/jshn")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn"
-         OLD_RPATH "/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/jshn")
-    endif()
-  endif()
-endif()
+  ENDIF()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so")
+  IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+  IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+FILE(INSTALL DESTINATION "/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib" TYPE SHARED_LIBRARY FILES "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/libjson_script.so")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so")
+    FILE(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so")
+    IF(CMAKE_INSTALL_DO_STRIP)
+      EXECUTE_PROCESS(COMMAND "/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-strip" "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libjson_script.so")
+    ENDIF(CMAKE_INSTALL_DO_STRIP)
+  ENDIF()
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so"
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so")
+    FILE(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so"
          RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox/libjson_script.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so"
-         OLD_RPATH "/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox:/home/tangss/tmp/misc/linux/c/ipc/bus/bin/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjson_script.so")
-    endif()
-  endif()
-endif()
+  ENDIF()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so")
+  IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+  IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+FILE(INSTALL DESTINATION "/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib" TYPE SHARED_LIBRARY FILES "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/libubox.so")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so")
+    IF(CMAKE_INSTALL_DO_STRIP)
+      EXECUTE_PROCESS(COMMAND "/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-strip" "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/lib/libubox.so")
+    ENDIF(CMAKE_INSTALL_DO_STRIP)
+  ENDIF()
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libubox" TYPE FILE FILES "/home/tangss/tmp/misc/linux/c/ipc/bus/libubox/sh/jshn.sh")
-endif()
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn")
+    FILE(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn"
+         RPATH "")
+  ENDIF()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn")
+  IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+  IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+FILE(INSTALL DESTINATION "/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin" TYPE EXECUTABLE FILES "/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/jshn")
+  IF(EXISTS "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn")
+    FILE(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn")
+    IF(CMAKE_INSTALL_DO_STRIP)
+      EXECUTE_PROCESS(COMMAND "/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-strip" "$ENV{DESTDIR}/home/tangshishan/tmp/misc/linux/c/ipc/bus/bin/jshn")
+    ENDIF(CMAKE_INSTALL_DO_STRIP)
+  ENDIF()
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libubox" TYPE FILE FILES "/home/tangshishan/tmp/misc/linux/c/ipc/bus/libubox/sh/jshn.sh")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tangss/tmp/misc/linux/c/ipc/bus/build/libubox/lua/cmake_install.cmake")
+  INCLUDE("/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/json/cmake_install.cmake")
+  INCLUDE("/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/libubox/lua/cmake_install.cmake")
 
-endif()
+ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

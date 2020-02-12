@@ -1,0 +1,483 @@
+gcc -c  -g -DDEBUG -DTEST_CLI_EVENTS -I./ -I../ -I../../ -I../../../../cmockery/src/google/ test_conduit.c -o test_conduit.o
+test_conduit.c: In function ‘process_func_1’:
+test_conduit.c:68:5: warning: implicit declaration of function ‘memmove’ [-Wimplicit-function-declaration]
+     memmove(res, "test_server_1", strlen("test_server_1")+1);
+     ^~~~~~~
+test_conduit.c:68:5: warning: incompatible implicit declaration of built-in function ‘memmove’
+test_conduit.c:68:5: note: include ‘<string.h>’ or provide a declaration of ‘memmove’
+test_conduit.c:68:35: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+     memmove(res, "test_server_1", strlen("test_server_1")+1);
+                                   ^~~~~~
+test_conduit.c:68:35: warning: incompatible implicit declaration of built-in function ‘strlen’
+test_conduit.c:68:35: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+test_conduit.c: In function ‘process_func_2’:
+test_conduit.c:76:5: warning: incompatible implicit declaration of built-in function ‘memmove’
+     memmove(res, "test_server_2", strlen("test_server_2")+1);
+     ^~~~~~~
+test_conduit.c:76:5: note: include ‘<string.h>’ or provide a declaration of ‘memmove’
+test_conduit.c:76:35: warning: incompatible implicit declaration of built-in function ‘strlen’
+     memmove(res, "test_server_2", strlen("test_server_2")+1);
+                                   ^~~~~~
+test_conduit.c:76:35: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+test_conduit.c: In function ‘srv_event_callback’:
+test_conduit.c:117:17: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+             j = strcmp(type, srvevents[i]);
+                 ^~~~~~
+test_conduit.c:125:17: warning: implicit declaration of function ‘strstr’ [-Wimplicit-function-declaration]
+             j = strstr(srveventcontents[i], str);
+                 ^~~~~~
+test_conduit.c:125:17: warning: incompatible implicit declaration of built-in function ‘strstr’
+test_conduit.c:125:17: note: include ‘<string.h>’ or provide a declaration of ‘strstr’
+test_conduit.c:125:15: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+             j = strstr(srveventcontents[i], str);
+               ^
+test_conduit.c: In function ‘cli_event_callback’:
+test_conduit.c:164:17: warning: incompatible implicit declaration of built-in function ‘strstr’
+             j = strstr(clieventcontents[i], str);
+                 ^~~~~~
+test_conduit.c:164:17: note: include ‘<string.h>’ or provide a declaration of ‘strstr’
+test_conduit.c:164:15: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+             j = strstr(clieventcontents[i], str);
+               ^
+test_conduit.c: In function ‘test_client_call’:
+test_conduit.c:214:5: warning: implicit declaration of function ‘sleep’ [-Wimplicit-function-declaration]
+     sleep(10);
+     ^~~~~
+test_conduit.c: In function ‘main’:
+test_conduit.c:364:11: warning: implicit declaration of function ‘fork’ [-Wimplicit-function-declaration]
+     pid = fork();
+           ^~~~
+test_conduit.c:368:9: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]
+         exit(1);
+         ^~~~
+test_conduit.c:368:9: warning: incompatible implicit declaration of built-in function ‘exit’
+test_conduit.c:368:9: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’
+test_conduit.c:374:17: warning: implicit declaration of function ‘getpid’; did you mean ‘fgetpos’? [-Wimplicit-function-declaration]
+                 getpid(), getppid());
+                 ^~~~~~
+                 fgetpos
+test_conduit.c:374:27: warning: implicit declaration of function ‘getppid’ [-Wimplicit-function-declaration]
+                 getpid(), getppid());
+                           ^~~~~~~
+gcc -c  -g -DDEBUG -DTEST_CLI_EVENTS -I./ -I../ -I../../ -I../../../../cmockery/src/google/ ..//conduit_client.c -o ..//conduit_client.o
+In file included from ..//conduit_client.c:16:0:
+../../libubox/blobmsg_json.h:24:10: note: #pragma message: JSON/JSON.h
+  #pragma message("JSON/JSON.h")
+          ^~~~~~~
+gcc -c  -g -DDEBUG -DTEST_CLI_EVENTS -I./ -I../ -I../../ -I../../../../cmockery/src/google/ ..//conduit_server.c -o ..//conduit_server.o
+In file included from ..//conduit_server.c:13:0:
+../../libubox/blobmsg_json.h:24:10: note: #pragma message: JSON/JSON.h
+  #pragma message("JSON/JSON.h")
+          ^~~~~~~
+gcc -c  -g -DDEBUG -DTEST_CLI_EVENTS -I./ -I../ -I../../ -I../../../../cmockery/src/google/ ../../../../cmockery/src//cmockery.c -o ../../../../cmockery/src//cmockery.o
+In file included from ../../../../cmockery/src//cmockery.c:34:0:
+../../../../cmockery/src//cmockery.c: In function ‘initialize_source_location’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:283:5: note: in expansion of macro ‘assert_true’
+     assert_true(location);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘source_location_is_set’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:291:5: note: in expansion of macro ‘assert_true’
+     assert_true(location);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘set_source_location’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:300:5: note: in expansion of macro ‘assert_true’
+     assert_true(location);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_add_value’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:360:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:361:5: note: in expansion of macro ‘assert_true’
+     assert_true(value);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_add’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:370:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:371:5: note: in expansion of macro ‘assert_true’
+     assert_true(new_node);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_remove’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:384:5: note: in expansion of macro ‘assert_true’
+     assert_true(node);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_remove_free’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:398:5: note: in expansion of macro ‘assert_true’
+     assert_true(node);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_free’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:412:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_empty’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:422:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_find’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:433:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘list_first’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:446:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘free_value’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:458:5: note: in expansion of macro ‘assert_true’
+     assert_true(value);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘free_symbol_map_value’:
+../../../../cmockery/src//cmockery.c:467:35: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     const unsigned int children = (unsigned int)cleanup_value_data;
+                                   ^
+In file included from ../../../../cmockery/src//cmockery.c:34:0:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:468:5: note: in expansion of macro ‘assert_true’
+     assert_true(value);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:471:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+               (void*)(children - 1));
+               ^
+In file included from ../../../../cmockery/src//cmockery.c:34:0:
+../../../../cmockery/src//cmockery.c: In function ‘add_symbol_value’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:494:5: note: in expansion of macro ‘assert_true’
+     assert_true(symbol_map_head);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:495:5: note: in expansion of macro ‘assert_true’
+     assert_true(symbol_names);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘get_symbol_value’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:532:5: note: in expansion of macro ‘assert_true’
+     assert_true(head);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:533:5: note: in expansion of macro ‘assert_true’
+     assert_true(symbol_names);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:535:5: note: in expansion of macro ‘assert_true’
+     assert_true(output);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:542:9: note: in expansion of macro ‘assert_true’
+         assert_true(target_node);
+         ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:543:9: note: in expansion of macro ‘assert_true’
+         assert_true(target_node->value);
+         ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘remove_always_return_values’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:580:5: note: in expansion of macro ‘assert_true’
+     assert_true(map_head);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:587:9: note: in expansion of macro ‘assert_true’
+         assert_true(value);
+         ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘check_for_leftover_values’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:618:5: note: in expansion of macro ‘assert_true’
+     assert_true(map_head);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:626:9: note: in expansion of macro ‘assert_true’
+         assert_true(value);
+         ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘value_in_set_display_error’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:755:5: note: in expansion of macro ‘assert_true’
+     assert_true(check_integer_set);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘expect_set’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:914:5: note: in expansion of macro ‘assert_true’
+     assert_true(values);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘check_in_range’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:952:5: note: in expansion of macro ‘assert_true’
+     assert_true(check_integer_range);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘check_not_in_range’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:964:5: note: in expansion of macro ‘assert_true’
+     assert_true(check_integer_range);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘check_memory’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1091:5: note: in expansion of macro ‘assert_true’
+     assert_true(check);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘expect_memory_setup’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1108:5: note: in expansion of macro ‘assert_true’
+     assert_true(memory);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘check_not_memory’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1134:5: note: in expansion of macro ‘assert_true’
+     assert_true(check);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘mock_assert’:
+../../../../cmockery/src//cmockery.c:1214:47: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+             longjmp(global_expect_assert_env, (int)expression);
+                                               ^
+In file included from ../../../../cmockery/src//cmockery.c:34:0:
+../../../../cmockery/src//cmockery.c: In function ‘_test_malloc’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1357:5: note: in expansion of macro ‘assert_true’
+     assert_true(block);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘_test_free’:
+../../../../cmockery/src//cmockery.c:1397:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     _assert_true((int)ptr, "ptr", file, line);
+                  ^
+In file included from ../../../../cmockery/src//cmockery.c:34:0:
+../../../../cmockery/src//cmockery.c: In function ‘display_allocated_blocks’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1442:5: note: in expansion of macro ‘assert_true’
+     assert_true(check_point);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1443:5: note: in expansion of macro ‘assert_true’
+     assert_true(check_point->next);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1447:9: note: in expansion of macro ‘assert_true’
+         assert_true(block_info);
+         ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘free_allocated_blocks’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1465:5: note: in expansion of macro ‘assert_true’
+     assert_true(check_point);
+     ^~~~~~~~~~~
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:176:37: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_true(c) _assert_true(cast_to_largest_integral_type(c), #c, \
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1468:5: note: in expansion of macro ‘assert_true’
+     assert_true(node);
+     ^~~~~~~~~~~
+../../../../cmockery/src//cmockery.c: In function ‘_run_tests’:
+../../../../cmockery/src/google/cmockery.h:52:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ((LargestIntegralType)((unsigned)(value)))
+                            ^
+../../../../cmockery/src/google/cmockery.h:179:40: note: in expansion of macro ‘cast_to_largest_integral_type’
+ #define assert_false(c) _assert_false((cast_to_largest_integral_type(c)), #c, \
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../cmockery/src//cmockery.c:1749:17: note: in expansion of macro ‘assert_false’
+                 assert_false("BUG: shouldn't be here!");
+                 ^~~~~~~~~~~~
+Makefile:137: "OBJS"  ./test_conduit.o ..//conduit_client.o ..//conduit_server.o ../../../../cmockery/src//cmockery.o
+gcc -o test_conduit  ./test_conduit.o ..//conduit_client.o ..//conduit_server.o ../../../../cmockery/src//cmockery.o -lpthread -lhzbus -lubox -lblobmsg_json -L../../bin/lib
+strip test_conduit
+cp test_conduit ../../bin -rf

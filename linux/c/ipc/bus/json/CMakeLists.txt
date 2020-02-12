@@ -2,8 +2,10 @@
 # specially true in old embedded systems (OpenWRT and friends) where CMake isn't necessarily upgraded.
 cmake_minimum_required(VERSION 2.8)
 
+#SET(CMAKE_C_COMPILER "arm-himix200-linux-gcc")
 # JSON-C library is C only project.
-project(json-c C)
+#project(json-c C)
+project(json-c)
 
 # If we've got 3.0 then it's good, let's provide support. Otherwise, leave it be.
 if(POLICY CMP0038)
@@ -85,7 +87,7 @@ check_symbol_exists(_finite         "float.h" HAVE_DECL__FINITE)
 
 if ((MSVC AND NOT (MSVC_VERSION LESS 1800)) OR MINGW OR CYGWIN OR UNIX)
     check_symbol_exists(INFINITY    "math.h" HAVE_DECL_INFINITY)
-    check_symbol_exists(isinf       "math.h" HAVE_DECL_ISINF)
+    #check_symbol_exists(isinf       "math.h" HAVE_DECL_ISINF)
     check_symbol_exists(isnan       "math.h" HAVE_DECL_ISNAN)
     check_symbol_exists(nan         "math.h" HAVE_DECL_NAN)
 endif()

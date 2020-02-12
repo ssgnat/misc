@@ -2,13 +2,13 @@
 # It must be specified.
 # PROGRAM := a.out # the executable name
 PROGRAM := $(NAME)
+CMPLER := arm-linux-androideabi-
 
 # The directories in which source files reside.
 # At least one path should be specified.
 # SRCDIRS := . # current directory
 SRCDIRS := .
-SRCDIRS += ../
-#SRCDIRS += ../../../../cmockery/src/
+SRCDIRS += ../ #SRCDIRS += ../../../../cmockery/src/
 
 # The source file types (headers excluded).
 # At least one type should be specified.
@@ -39,20 +39,28 @@ CFLAGS += -I../../../../cmockery/src/google/
 CXXFLAGS :=
 
 # The library and the link options ( C and C++ common ).
-LDFLAGS := -lpthread
+LDFLAGS := -landroid
 LDFLAGS += -lhzbus
-LDFLAGS += -lubox
 LDFLAGS += -lblobmsg_json
 LDFLAGS += -L../../bin/lib
+
+#ifdef ANDROID
+LDFLAGS += -lubox
+LDFLAGS += -lc
+LDFLAGS += -lm -llog
+LDFLAGS += -L../../../../../conduit/
+#endif
 
 ## Implict Section: change the following only when necessary.
 ##=============================================================================
 # The C program compiler. Uncomment it to specify yours explicitly.
 #CC = gcc
-CC = gcc
-STRIP = strip
+#CC = gcc
+#STRIP = strip
 #CC = arm-himix200-linux-gcc
 #STRIP = arm-himix200-linux-strip
+CC = $(CMPLER)gcc
+STRIP = $(CMPLER)strip
 
 # The C++ program compiler. Uncomment it to specify yours explicitly.
 #CXX = g++
