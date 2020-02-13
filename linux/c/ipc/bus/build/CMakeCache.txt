@@ -40,7 +40,7 @@ CMAKE_CXX_COMPILER:FILEPATH=/home/tangshishan/arm-himix200-linux/bin/arm-himix20
 CMAKE_CXX_COMPILER_WITH_PATH:FILEPATH=/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++
 
 //Flags used by the compiler during all build types.
-CMAKE_CXX_FLAGS:STRING='-lstdc++ '
+CMAKE_CXX_FLAGS:STRING=
 
 //Flags used by the compiler during debug builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g

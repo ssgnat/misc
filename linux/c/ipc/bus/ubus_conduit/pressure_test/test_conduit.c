@@ -69,9 +69,10 @@ static int
 process_func_1(const char *req, char res[CUSTOM_OBJECT_NAME_LEN_MAX])
 {
     //assert_string_equal(req, "test_client_1");
-    memmove(res, "test_server_1", strlen("test_server_1")+1);
+    //memmove(res, "test_server_1", strlen("test_server_1")+1);
+    memmove(res, req, strlen(req)+1);
 
-    sleep(2);
+    //sleep(2);
 
     return 0;
 }
@@ -80,7 +81,8 @@ static int
 process_func_2(const char *req, char res[CUSTOM_OBJECT_NAME_LEN_MAX])
 {
     //assert_string_equal(req, "test_client_2");
-    memmove(res, "test_server_2", strlen("test_server_2")+1);
+    //memmove(res, "test_server_2", strlen("test_server_2")+1);
+    memmove(res, req, strlen(req)+1);
     return 0;
 }
 
@@ -93,7 +95,7 @@ _response_callback_1(void *auxiliary, int resp_code, const char *resp_content)
 
     //printf("1 auxiliary:%s\n", (char *)auxiliary);
     //printf("1 rc:%d\n",  resp_code);
-    //printf("1 content:%s\n",  resp_content);
+    printf("1 content:%s\n",  resp_content);
     printf("cr - time:%d\n", s_cnt++);
 
     return ;
@@ -107,7 +109,7 @@ _response_callback_2(void *auxiliary, int resp_code, const char *resp_content)
 
     //printf("2 auxiliary:%s\n", (char *)auxiliary);
     //printf("2 rc:%d\n",  resp_code);
-    //printf("2 content:%s\n",  resp_content);
+    printf("2 content:%s\n",  resp_content);
     printf("cr - time:%d\n", s_cnt++);
     return ;
 }
@@ -241,7 +243,8 @@ static void
 test_client_slow_call(void **state)
 {
     printf("cs - time:%d\n", c_cnt++);
-    cdt_cli_request_timeout(request1, "module1", "m1", "test_client_1",6000);
+    //cdt_cli_request_timeout(request1, "module1", "m1", "test_client_1",6000);
+    cdt_cli_request_timeout(request1, "module1", "m1", "tttttttttttttt",6000);
 
     return ;
 }
@@ -311,10 +314,13 @@ call_client_func(void *argv)
 void
 call_client_slow_func(void *argv)
 {
-    int n = *(int*)(argv);
+    int n = 0;
+    if(argv != NULL)
+        n = *(int*)(argv);
     test_client_start(NULL);
     while (c_cnt < 15000) {
         test_client_slow_call(NULL);
+        LOGD;
         test_client_slow_call_timeout(NULL);
     }
     test_client_stop(NULL);
@@ -343,16 +349,22 @@ int main(int argc, char *argv[])
        }
        */
 
+       call_client_slow_func(NULL);
+       /*
       ret = pthread_create(&pids[i], NULL, call_client_slow_func, &i);
        if (ret != 0) {
            exit(0);
            return 0;
        }
+       */
     }
+
+    /*
 
     for(i = 0; i < MAX_CNT; i++){
         pthread_join(pids[i], NULL);
     }
+    */
 
     test_client_stop(NULL);
     return 0;

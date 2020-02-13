@@ -4,7 +4,7 @@ function MAKETARGET()
 {
     echo $1
     make clean && make TARGET=-D$1 >build.log 2>&1
-    sudo ./test.sh
+    #sudo ./test.sh
 }
 
 

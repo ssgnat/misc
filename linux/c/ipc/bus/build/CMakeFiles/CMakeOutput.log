@@ -15,7 +15,7 @@ The C compiler identification is GNU, found in "/home/tangshishan/tmp/misc/linux
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++ 
-Build flags: -lstdc++
+Build flags: 
 Id flags: 
 
 The output was:
@@ -29,30 +29,30 @@ The CXX compiler identification is GNU, found in "/home/tangshishan/tmp/misc/lin
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3597905792/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3597905792.dir/build.make CMakeFiles/cmTryCompileExec3597905792.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec182719546/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec182719546.dir/build.make CMakeFiles/cmTryCompileExec182719546.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3597905792.dir/testCCompiler.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc    -o CMakeFiles/cmTryCompileExec3597905792.dir/testCCompiler.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec3597905792
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3597905792.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3597905792.dir/testCCompiler.c.o  -o cmTryCompileExec3597905792 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec182719546.dir/testCCompiler.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc    -o CMakeFiles/cmTryCompileExec182719546.dir/testCCompiler.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec182719546
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec182719546.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec182719546.dir/testCCompiler.c.o  -o cmTryCompileExec182719546 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2285368559/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2285368559.dir/build.make CMakeFiles/cmTryCompileExec2285368559.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1517831907/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1517831907.dir/build.make CMakeFiles/cmTryCompileExec1517831907.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc    -o CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec2285368559
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2285368559.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc     -v CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2285368559 -rdynamic  
+Building C object CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc    -o CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec1517831907
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1517831907.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc     -v CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1517831907 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc
 COLLECT_LTO_WRAPPER=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/lto-wrapper
@@ -62,9 +62,9 @@ Thread model: posix
 gcc version 6.3.0 (HC&C V100R002C00B020_20180814) 
 COMPILER_PATH=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/bin/
 LIBRARY_PATH=/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2285368559' '-rdynamic' '-mtls-dialect=gnu'
- /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec2285368559 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2285368559' '-rdynamic' '-mtls-dialect=gnu'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1517831907' '-rdynamic' '-mtls-dialect=gnu'
+ /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec1517831907 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1517831907' '-rdynamic' '-mtls-dialect=gnu'
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
@@ -72,15 +72,15 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-himix200-linux-ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2285368559/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2285368559.dir/build.make CMakeFiles/cmTryCompileExec2285368559.dir/build]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1517831907/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1517831907.dir/build.make CMakeFiles/cmTryCompileExec1517831907.dir/build]
   ignore line: [make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp']
   ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc    -o CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec2285368559]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2285368559.dir/link.txt --verbose=1]
-  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc     -v CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2285368559 -rdynamic  ]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc    -o CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec1517831907]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1517831907.dir/link.txt --verbose=1]
+  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc     -v CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1517831907 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/lto-wrapper]
@@ -90,8 +90,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 6.3.0 (HC&C V100R002C00B020_20180814) ]
   ignore line: [COMPILER_PATH=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/bin/]
   ignore line: [LIBRARY_PATH=/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2285368559' '-rdynamic' '-mtls-dialect=gnu']
-  link line: [ /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec2285368559 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1517831907' '-rdynamic' '-mtls-dialect=gnu']
+  link line: [ /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec1517831907 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o]
     arg [/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2] ==> ignore
     arg [--sysroot=/home/tangshishan/arm-himix200-linux/bin/../target] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
@@ -102,7 +102,7 @@ Parsed C implicit link information from above output:
     arg [-m] ==> ignore
     arg [armelf_linux_eabi] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec2285368559] ==> ignore
+    arg [cmTryCompileExec1517831907] ==> ignore
     arg [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o] ==> ignore
     arg [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o] ==> ignore
     arg [/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o] ==> ignore
@@ -111,7 +111,7 @@ Parsed C implicit link information from above output:
     arg [-L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib] ==> dir [/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib]
     arg [-L/home/tangshishan/arm-himix200-linux/bin/../target/lib] ==> dir [/home/tangshishan/arm-himix200-linux/bin/../target/lib]
     arg [-L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib] ==> dir [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib]
-    arg [CMakeFiles/cmTryCompileExec2285368559.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1517831907.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -140,30 +140,30 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2045119800/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2045119800.dir/build.make CMakeFiles/cmTryCompileExec2045119800.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec965026684/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec965026684.dir/build.make CMakeFiles/cmTryCompileExec965026684.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2045119800.dir/testCXXCompiler.cxx.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++    -lstdc++     -o CMakeFiles/cmTryCompileExec2045119800.dir/testCXXCompiler.cxx.o -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec2045119800
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2045119800.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++   -lstdc++      CMakeFiles/cmTryCompileExec2045119800.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2045119800 -rdynamic 
+Building CXX object CMakeFiles/cmTryCompileExec965026684.dir/testCXXCompiler.cxx.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++     -o CMakeFiles/cmTryCompileExec965026684.dir/testCXXCompiler.cxx.o -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec965026684
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec965026684.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++        CMakeFiles/cmTryCompileExec965026684.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec965026684 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec4136335664/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4136335664.dir/build.make CMakeFiles/cmTryCompileExec4136335664.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4065981624/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4065981624.dir/build.make CMakeFiles/cmTryCompileExec4065981624.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++    -lstdc++     -o CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec4136335664
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4136335664.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++   -lstdc++    -v CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec4136335664 -rdynamic  
+Building CXX object CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++     -o CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec4065981624
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4065981624.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++      -v CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec4065981624 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++
 COLLECT_LTO_WRAPPER=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/lto-wrapper
@@ -173,9 +173,9 @@ Thread model: posix
 gcc version 6.3.0 (HC&C V100R002C00B020_20180814) 
 COMPILER_PATH=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/bin/
 LIBRARY_PATH=/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4136335664' '-rdynamic' '-shared-libgcc' '-mtls-dialect=gnu'
- /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec4136335664 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib -lstdc++ CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4136335664' '-rdynamic' '-shared-libgcc' '-mtls-dialect=gnu'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4065981624' '-rdynamic' '-shared-libgcc' '-mtls-dialect=gnu'
+ /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec4065981624 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4065981624' '-rdynamic' '-shared-libgcc' '-mtls-dialect=gnu'
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
@@ -183,15 +183,15 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-himix200-linux-ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec4136335664/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec4136335664.dir/build.make CMakeFiles/cmTryCompileExec4136335664.dir/build]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec4065981624/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec4065981624.dir/build.make CMakeFiles/cmTryCompileExec4065981624.dir/build]
   ignore line: [make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp']
   ignore line: [/usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++    -lstdc++     -o CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec4136335664]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4136335664.dir/link.txt --verbose=1]
-  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++   -lstdc++    -v CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec4136335664 -rdynamic  ]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++     -o CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec4065981624]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4065981624.dir/link.txt --verbose=1]
+  ignore line: [/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++      -v CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec4065981624 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-g++]
   ignore line: [COLLECT_LTO_WRAPPER=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/lto-wrapper]
@@ -201,8 +201,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 6.3.0 (HC&C V100R002C00B020_20180814) ]
   ignore line: [COMPILER_PATH=/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/bin/]
   ignore line: [LIBRARY_PATH=/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/:/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/lib/:/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4136335664' '-rdynamic' '-shared-libgcc' '-mtls-dialect=gnu']
-  link line: [ /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec4136335664 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib -lstdc++ CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4065981624' '-rdynamic' '-shared-libgcc' '-mtls-dialect=gnu']
+  link line: [ /home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2 --sysroot=/home/tangshishan/arm-himix200-linux/bin/../target --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux.so.3 -X -m armelf_linux_eabi -o cmTryCompileExec4065981624 /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0 -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc -L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/lib -L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtend.o /home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crtn.o]
     arg [/home/tangshishan/arm-himix200-linux/bin/../libexec/gcc/arm-linux-gnueabi/6.3.0/collect2] ==> ignore
     arg [--sysroot=/home/tangshishan/arm-himix200-linux/bin/../target] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
@@ -213,7 +213,7 @@ Parsed CXX implicit link information from above output:
     arg [-m] ==> ignore
     arg [armelf_linux_eabi] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec4136335664] ==> ignore
+    arg [cmTryCompileExec4065981624] ==> ignore
     arg [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crt1.o] ==> ignore
     arg [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib/crti.o] ==> ignore
     arg [/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/crtbegin.o] ==> ignore
@@ -222,8 +222,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib] ==> dir [/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib]
     arg [-L/home/tangshishan/arm-himix200-linux/bin/../target/lib] ==> dir [/home/tangshishan/arm-himix200-linux/bin/../target/lib]
     arg [-L/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib] ==> dir [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib]
-    arg [-lstdc++] ==> lib [stdc++]
-    arg [CMakeFiles/cmTryCompileExec4136335664.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec4065981624.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -242,7 +241,7 @@ Parsed CXX implicit link information from above output:
   collapse library dir [/home/tangshishan/arm-himix200-linux/bin/../lib/gcc/arm-linux-gnueabi/6.3.0/../../../../arm-linux-gnueabi/lib] ==> [/home/tangshishan/arm-himix200-linux/arm-linux-gnueabi/lib]
   collapse library dir [/home/tangshishan/arm-himix200-linux/bin/../target/lib] ==> [/home/tangshishan/arm-himix200-linux/target/lib]
   collapse library dir [/home/tangshishan/arm-himix200-linux/bin/../target/usr/lib] ==> [/home/tangshishan/arm-himix200-linux/target/usr/lib]
-  implicit libs: [stdc++;stdc++;m;c]
+  implicit libs: [stdc++;m;c]
   implicit dirs: [/home/tangshishan/arm-himix200-linux/lib/gcc/arm-linux-gnueabi/6.3.0;/home/tangshishan/arm-himix200-linux/lib/gcc;/home/tangshishan/arm-himix200-linux/arm-linux-gnueabi/lib;/home/tangshishan/arm-himix200-linux/target/lib;/home/tangshishan/arm-himix200-linux/target/usr/lib]
   implicit fwks: []
 
@@ -250,300 +249,300 @@ Parsed CXX implicit link information from above output:
 Determining if the include file fcntl.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3824559740/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3824559740.dir/build.make CMakeFiles/cmTryCompileExec3824559740.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec792121840/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec792121840.dir/build.make CMakeFiles/cmTryCompileExec792121840.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3824559740.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3824559740.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec3824559740
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3824559740.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3824559740.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3824559740 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec792121840.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec792121840.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec792121840
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec792121840.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec792121840.dir/CheckIncludeFile.c.o  -o cmTryCompileExec792121840 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file inttypes.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec554929464/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec554929464.dir/build.make CMakeFiles/cmTryCompileExec554929464.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2580456915/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2580456915.dir/build.make CMakeFiles/cmTryCompileExec2580456915.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec554929464.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec554929464.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec554929464
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec554929464.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec554929464.dir/CheckIncludeFile.c.o  -o cmTryCompileExec554929464 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec2580456915.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2580456915.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2580456915
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2580456915.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2580456915.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2580456915 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdarg.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1115311588/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1115311588.dir/build.make CMakeFiles/cmTryCompileExec1115311588.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3817255173/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3817255173.dir/build.make CMakeFiles/cmTryCompileExec3817255173.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1115311588.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1115311588.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec1115311588
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1115311588.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1115311588.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1115311588 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec3817255173.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3817255173.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec3817255173
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3817255173.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3817255173.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3817255173 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file strings.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec970765671/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec970765671.dir/build.make CMakeFiles/cmTryCompileExec970765671.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec936153054/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec936153054.dir/build.make CMakeFiles/cmTryCompileExec936153054.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec970765671.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec970765671.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec970765671
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec970765671.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec970765671.dir/CheckIncludeFile.c.o  -o cmTryCompileExec970765671 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec936153054.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec936153054.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec936153054
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec936153054.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec936153054.dir/CheckIncludeFile.c.o  -o cmTryCompileExec936153054 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file string.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1579088083/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1579088083.dir/build.make CMakeFiles/cmTryCompileExec1579088083.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1618119179/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1618119179.dir/build.make CMakeFiles/cmTryCompileExec1618119179.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1579088083.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1579088083.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec1579088083
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1579088083.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1579088083.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1579088083 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec1618119179.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1618119179.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1618119179
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1618119179.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1618119179.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1618119179 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file syslog.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3259456795/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3259456795.dir/build.make CMakeFiles/cmTryCompileExec3259456795.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2784996587/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2784996587.dir/build.make CMakeFiles/cmTryCompileExec2784996587.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3259456795.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3259456795.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec3259456795
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3259456795.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3259456795.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3259456795 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec2784996587.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2784996587.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2784996587
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2784996587.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2784996587.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2784996587 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if files stdlib.h;stdarg.h;string.h;float.h exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec802947759/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec802947759.dir/build.make CMakeFiles/cmTryCompileExec802947759.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4249696666/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4249696666.dir/build.make CMakeFiles/cmTryCompileExec4249696666.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec802947759.dir/CheckIncludeFiles.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec802947759.dir/CheckIncludeFiles.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec802947759
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec802947759.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec802947759.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec802947759 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec4249696666.dir/CheckIncludeFiles.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4249696666.dir/CheckIncludeFiles.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec4249696666
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4249696666.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4249696666.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec4249696666 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file unistd.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1440150452/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1440150452.dir/build.make CMakeFiles/cmTryCompileExec1440150452.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec620847124/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec620847124.dir/build.make CMakeFiles/cmTryCompileExec620847124.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1440150452.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1440150452.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec1440150452
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1440150452.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1440150452.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1440150452 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec620847124.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec620847124.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec620847124
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec620847124.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec620847124.dir/CheckIncludeFile.c.o  -o cmTryCompileExec620847124 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file sys/types.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2829109380/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2829109380.dir/build.make CMakeFiles/cmTryCompileExec2829109380.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2000115362/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2000115362.dir/build.make CMakeFiles/cmTryCompileExec2000115362.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2829109380.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2829109380.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec2829109380
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2829109380.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2829109380.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2829109380 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec2000115362.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2000115362.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2000115362
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2000115362.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2000115362.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2000115362 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file dlfcn.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1289227463/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1289227463.dir/build.make CMakeFiles/cmTryCompileExec1289227463.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4277150763/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4277150763.dir/build.make CMakeFiles/cmTryCompileExec4277150763.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1289227463.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1289227463.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec1289227463
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1289227463.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1289227463.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1289227463 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec4277150763.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4277150763.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec4277150763
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4277150763.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4277150763.dir/CheckIncludeFile.c.o  -o cmTryCompileExec4277150763 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file endian.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3853260156/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3853260156.dir/build.make CMakeFiles/cmTryCompileExec3853260156.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4146035170/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4146035170.dir/build.make CMakeFiles/cmTryCompileExec4146035170.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3853260156.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3853260156.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec3853260156
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3853260156.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3853260156.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3853260156 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec4146035170.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4146035170.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec4146035170
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4146035170.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4146035170.dir/CheckIncludeFile.c.o  -o cmTryCompileExec4146035170 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file limits.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec4029756802/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4029756802.dir/build.make CMakeFiles/cmTryCompileExec4029756802.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec345691587/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec345691587.dir/build.make CMakeFiles/cmTryCompileExec345691587.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec4029756802.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4029756802.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec4029756802
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4029756802.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4029756802.dir/CheckIncludeFile.c.o  -o cmTryCompileExec4029756802 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec345691587.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec345691587.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec345691587
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec345691587.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec345691587.dir/CheckIncludeFile.c.o  -o cmTryCompileExec345691587 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file memory.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1713733190/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1713733190.dir/build.make CMakeFiles/cmTryCompileExec1713733190.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec463678721/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec463678721.dir/build.make CMakeFiles/cmTryCompileExec463678721.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1713733190.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1713733190.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec1713733190
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1713733190.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1713733190.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1713733190 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec463678721.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec463678721.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec463678721
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec463678721.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec463678721.dir/CheckIncludeFile.c.o  -o cmTryCompileExec463678721 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdint.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec892839227/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec892839227.dir/build.make CMakeFiles/cmTryCompileExec892839227.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2464149323/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2464149323.dir/build.make CMakeFiles/cmTryCompileExec2464149323.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec892839227.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec892839227.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec892839227
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec892839227.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec892839227.dir/CheckIncludeFile.c.o  -o cmTryCompileExec892839227 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec2464149323.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2464149323.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2464149323
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2464149323.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2464149323.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2464149323 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file stdlib.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2865476439/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2865476439.dir/build.make CMakeFiles/cmTryCompileExec2865476439.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec782704781/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec782704781.dir/build.make CMakeFiles/cmTryCompileExec782704781.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2865476439.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2865476439.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec2865476439
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2865476439.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2865476439.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2865476439 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec782704781.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec782704781.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec782704781
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec782704781.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec782704781.dir/CheckIncludeFile.c.o  -o cmTryCompileExec782704781 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file sys/cdefs.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec686266701/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec686266701.dir/build.make CMakeFiles/cmTryCompileExec686266701.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3878147599/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3878147599.dir/build.make CMakeFiles/cmTryCompileExec3878147599.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec686266701.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec686266701.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec686266701
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec686266701.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec686266701.dir/CheckIncludeFile.c.o  -o cmTryCompileExec686266701 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec3878147599.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3878147599.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec3878147599
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3878147599.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3878147599.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3878147599 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file sys/param.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2189541734/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2189541734.dir/build.make CMakeFiles/cmTryCompileExec2189541734.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1643441703/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1643441703.dir/build.make CMakeFiles/cmTryCompileExec1643441703.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2189541734.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2189541734.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec2189541734
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2189541734.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2189541734.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2189541734 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec1643441703.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1643441703.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1643441703
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1643441703.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1643441703.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1643441703 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file sys/stat.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2304340243/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2304340243.dir/build.make CMakeFiles/cmTryCompileExec2304340243.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3128487320/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3128487320.dir/build.make CMakeFiles/cmTryCompileExec3128487320.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2304340243.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2304340243.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec2304340243
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2304340243.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2304340243.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2304340243 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec3128487320.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3128487320.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec3128487320
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3128487320.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3128487320.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3128487320 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the include file xlocale.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2317738179/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2317738179.dir/build.make CMakeFiles/cmTryCompileExec2317738179.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4131258628/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4131258628.dir/build.make CMakeFiles/cmTryCompileExec4131258628.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2317738179.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2317738179.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec2317738179
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2317738179.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2317738179.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2317738179 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec4131258628.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4131258628.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec4131258628
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4131258628.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4131258628.dir/CheckIncludeFile.c.o  -o cmTryCompileExec4131258628 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the INFINITY exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1921927162/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1921927162.dir/build.make CMakeFiles/cmTryCompileExec1921927162.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2272453461/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2272453461.dir/build.make CMakeFiles/cmTryCompileExec2272453461.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1921927162.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1921927162.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1921927162
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1921927162.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1921927162.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1921927162 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2272453461.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2272453461.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2272453461
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2272453461.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2272453461.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2272453461 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -564,15 +563,15 @@ int main(int argc, char** argv)
 Determining if the isnan exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec385774426/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec385774426.dir/build.make CMakeFiles/cmTryCompileExec385774426.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3215029898/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3215029898.dir/build.make CMakeFiles/cmTryCompileExec3215029898.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec385774426.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec385774426.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec385774426
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec385774426.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec385774426.dir/CheckSymbolExists.c.o  -o cmTryCompileExec385774426 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec3215029898.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3215029898.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3215029898
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3215029898.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3215029898.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3215029898 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -593,15 +592,15 @@ int main(int argc, char** argv)
 Determining if the nan exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec4082524349/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4082524349.dir/build.make CMakeFiles/cmTryCompileExec4082524349.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4207539394/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4207539394.dir/build.make CMakeFiles/cmTryCompileExec4207539394.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec4082524349.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4082524349.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec4082524349
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4082524349.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4082524349.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4082524349 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec4207539394.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4207539394.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec4207539394
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4207539394.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4207539394.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4207539394 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -622,15 +621,15 @@ int main(int argc, char** argv)
 Determining if the snprintf exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec4255202775/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4255202775.dir/build.make CMakeFiles/cmTryCompileExec4255202775.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4028140037/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4028140037.dir/build.make CMakeFiles/cmTryCompileExec4028140037.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec4255202775.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4255202775.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec4255202775
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4255202775.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4255202775.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4255202775 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec4028140037.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4028140037.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec4028140037
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4028140037.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4028140037.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4028140037 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -651,15 +650,15 @@ int main(int argc, char** argv)
 Determining if the vasprintf exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec611872609/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec611872609.dir/build.make CMakeFiles/cmTryCompileExec611872609.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec617256933/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec617256933.dir/build.make CMakeFiles/cmTryCompileExec617256933.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec611872609.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec611872609.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec611872609
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec611872609.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec611872609.dir/CheckSymbolExists.c.o  -o cmTryCompileExec611872609 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec617256933.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec617256933.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec617256933
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec617256933.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec617256933.dir/CheckSymbolExists.c.o  -o cmTryCompileExec617256933 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -680,15 +679,15 @@ int main(int argc, char** argv)
 Determining if the vsnprintf exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1479654540/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1479654540.dir/build.make CMakeFiles/cmTryCompileExec1479654540.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec549173994/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec549173994.dir/build.make CMakeFiles/cmTryCompileExec549173994.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1479654540.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1479654540.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1479654540
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1479654540.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1479654540.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1479654540 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec549173994.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec549173994.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec549173994
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec549173994.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec549173994.dir/CheckSymbolExists.c.o  -o cmTryCompileExec549173994 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -709,15 +708,15 @@ int main(int argc, char** argv)
 Determining if the vprintf exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec4087446831/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4087446831.dir/build.make CMakeFiles/cmTryCompileExec4087446831.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2181364166/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2181364166.dir/build.make CMakeFiles/cmTryCompileExec2181364166.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec4087446831.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec4087446831.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec4087446831
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4087446831.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec4087446831.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4087446831 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2181364166.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2181364166.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2181364166
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2181364166.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2181364166.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2181364166 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -738,15 +737,15 @@ int main(int argc, char** argv)
 Determining if the open exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2469252161/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2469252161.dir/build.make CMakeFiles/cmTryCompileExec2469252161.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2772053846/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2772053846.dir/build.make CMakeFiles/cmTryCompileExec2772053846.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2469252161.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2469252161.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec2469252161
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2469252161.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2469252161.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2469252161 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2772053846.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2772053846.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2772053846
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2772053846.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2772053846.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2772053846 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -767,15 +766,15 @@ int main(int argc, char** argv)
 Determining if the realloc exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3651986704/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3651986704.dir/build.make CMakeFiles/cmTryCompileExec3651986704.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3952371844/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3952371844.dir/build.make CMakeFiles/cmTryCompileExec3952371844.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3651986704.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3651986704.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec3651986704
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3651986704.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3651986704.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3651986704 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec3952371844.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3952371844.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3952371844
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3952371844.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3952371844.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3952371844 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -796,15 +795,15 @@ int main(int argc, char** argv)
 Determining if the strcasecmp exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1794335048/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1794335048.dir/build.make CMakeFiles/cmTryCompileExec1794335048.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3811759772/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3811759772.dir/build.make CMakeFiles/cmTryCompileExec3811759772.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1794335048.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1794335048.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1794335048
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1794335048.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1794335048.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1794335048 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec3811759772.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3811759772.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3811759772
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3811759772.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3811759772.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3811759772 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -825,15 +824,15 @@ int main(int argc, char** argv)
 Determining if the strncasecmp exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec14362510/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec14362510.dir/build.make CMakeFiles/cmTryCompileExec14362510.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2191864600/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2191864600.dir/build.make CMakeFiles/cmTryCompileExec2191864600.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec14362510.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec14362510.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec14362510
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec14362510.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec14362510.dir/CheckSymbolExists.c.o  -o cmTryCompileExec14362510 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2191864600.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2191864600.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2191864600
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2191864600.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2191864600.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2191864600 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -854,15 +853,15 @@ int main(int argc, char** argv)
 Determining if the strdup exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1895718049/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1895718049.dir/build.make CMakeFiles/cmTryCompileExec1895718049.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2644542458/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2644542458.dir/build.make CMakeFiles/cmTryCompileExec2644542458.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1895718049.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1895718049.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1895718049
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1895718049.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1895718049.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1895718049 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2644542458.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2644542458.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2644542458
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2644542458.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2644542458.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2644542458 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -883,15 +882,15 @@ int main(int argc, char** argv)
 Determining if the strerror exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2897530973/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2897530973.dir/build.make CMakeFiles/cmTryCompileExec2897530973.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1476599918/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1476599918.dir/build.make CMakeFiles/cmTryCompileExec1476599918.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2897530973.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2897530973.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec2897530973
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2897530973.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2897530973.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2897530973 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec1476599918.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1476599918.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1476599918
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1476599918.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1476599918.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1476599918 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -912,15 +911,15 @@ int main(int argc, char** argv)
 Determining if the vsyslog exist passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3962770161/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3962770161.dir/build.make CMakeFiles/cmTryCompileExec3962770161.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3193566679/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3193566679.dir/build.make CMakeFiles/cmTryCompileExec3193566679.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3962770161.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3962770161.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec3962770161
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3962770161.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3962770161.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3962770161 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec3193566679.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3193566679.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3193566679
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3193566679.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3193566679.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3193566679 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -941,105 +940,105 @@ int main(int argc, char** argv)
 Determining if the include file stddef.h exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2886827764/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2886827764.dir/build.make CMakeFiles/cmTryCompileExec2886827764.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1218501131/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1218501131.dir/build.make CMakeFiles/cmTryCompileExec1218501131.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2886827764.dir/CheckIncludeFile.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2886827764.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTryCompileExec2886827764
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2886827764.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2886827764.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2886827764 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec1218501131.dir/CheckIncludeFile.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1218501131.dir/CheckIncludeFile.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1218501131
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1218501131.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1218501131.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1218501131 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining size of int passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1134946553/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1134946553.dir/build.make CMakeFiles/cmTryCompileExec1134946553.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2795407300/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2795407300.dir/build.make CMakeFiles/cmTryCompileExec2795407300.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1134946553.dir/SIZEOF_INT.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1134946553.dir/SIZEOF_INT.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_INT.c
-Linking C executable cmTryCompileExec1134946553
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1134946553.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1134946553.dir/SIZEOF_INT.c.o  -o cmTryCompileExec1134946553 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2795407300.dir/SIZEOF_INT.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2795407300.dir/SIZEOF_INT.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_INT.c
+Linking C executable cmTryCompileExec2795407300
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2795407300.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2795407300.dir/SIZEOF_INT.c.o  -o cmTryCompileExec2795407300 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining size of int64_t passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1134093947/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1134093947.dir/build.make CMakeFiles/cmTryCompileExec1134093947.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2767616903/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2767616903.dir/build.make CMakeFiles/cmTryCompileExec2767616903.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1134093947.dir/SIZEOF_INT64_T.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1134093947.dir/SIZEOF_INT64_T.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_INT64_T.c
-Linking C executable cmTryCompileExec1134093947
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1134093947.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1134093947.dir/SIZEOF_INT64_T.c.o  -o cmTryCompileExec1134093947 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2767616903.dir/SIZEOF_INT64_T.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2767616903.dir/SIZEOF_INT64_T.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_INT64_T.c
+Linking C executable cmTryCompileExec2767616903
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2767616903.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2767616903.dir/SIZEOF_INT64_T.c.o  -o cmTryCompileExec2767616903 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining size of long passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1491569630/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1491569630.dir/build.make CMakeFiles/cmTryCompileExec1491569630.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3789439274/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3789439274.dir/build.make CMakeFiles/cmTryCompileExec3789439274.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1491569630.dir/SIZEOF_LONG.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1491569630.dir/SIZEOF_LONG.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG.c
-Linking C executable cmTryCompileExec1491569630
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1491569630.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec1491569630.dir/SIZEOF_LONG.c.o  -o cmTryCompileExec1491569630 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec3789439274.dir/SIZEOF_LONG.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3789439274.dir/SIZEOF_LONG.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG.c
+Linking C executable cmTryCompileExec3789439274
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3789439274.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3789439274.dir/SIZEOF_LONG.c.o  -o cmTryCompileExec3789439274 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining size of long long passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3178719722/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3178719722.dir/build.make CMakeFiles/cmTryCompileExec3178719722.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2082682145/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2082682145.dir/build.make CMakeFiles/cmTryCompileExec2082682145.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3178719722.dir/SIZEOF_LONG_LONG.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3178719722.dir/SIZEOF_LONG_LONG.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG_LONG.c
-Linking C executable cmTryCompileExec3178719722
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3178719722.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3178719722.dir/SIZEOF_LONG_LONG.c.o  -o cmTryCompileExec3178719722 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2082682145.dir/SIZEOF_LONG_LONG.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec2082682145.dir/SIZEOF_LONG_LONG.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_LONG_LONG.c
+Linking C executable cmTryCompileExec2082682145
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2082682145.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec2082682145.dir/SIZEOF_LONG_LONG.c.o  -o cmTryCompileExec2082682145 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Determining size of size_t passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec168900918/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec168900918.dir/build.make CMakeFiles/cmTryCompileExec168900918.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3647310950/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3647310950.dir/build.make CMakeFiles/cmTryCompileExec3647310950.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec168900918.dir/SIZEOF_SIZE_T.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec168900918.dir/SIZEOF_SIZE_T.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c
-Linking C executable cmTryCompileExec168900918
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec168900918.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec168900918.dir/SIZEOF_SIZE_T.c.o  -o cmTryCompileExec168900918 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec3647310950.dir/SIZEOF_SIZE_T.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec3647310950.dir/SIZEOF_SIZE_T.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CheckTypeSize/SIZEOF_SIZE_T.c
+Linking C executable cmTryCompileExec3647310950
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3647310950.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc       CMakeFiles/cmTryCompileExec3647310950.dir/SIZEOF_SIZE_T.c.o  -o cmTryCompileExec3647310950 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 
 Performing C SOURCE FILE Test HAVE_ATOMIC_BUILTINS succeded with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1415909213/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1415909213.dir/build.make CMakeFiles/cmTryCompileExec1415909213.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1013166659/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1013166659.dir/build.make CMakeFiles/cmTryCompileExec1013166659.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1415909213.dir/src.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE -DHAVE_ATOMIC_BUILTINS   -o CMakeFiles/cmTryCompileExec1415909213.dir/src.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTryCompileExec1415909213
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1415909213.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DHAVE_ATOMIC_BUILTINS    CMakeFiles/cmTryCompileExec1415909213.dir/src.c.o  -o cmTryCompileExec1415909213 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec1013166659.dir/src.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE -DHAVE_ATOMIC_BUILTINS   -o CMakeFiles/cmTryCompileExec1013166659.dir/src.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec1013166659
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1013166659.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DHAVE_ATOMIC_BUILTINS    CMakeFiles/cmTryCompileExec1013166659.dir/src.c.o  -o cmTryCompileExec1013166659 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 Source file was:
@@ -1047,15 +1046,15 @@ int main() { int i, x = 0; i = __sync_add_and_fetch(&x,1); return x; }
 Performing C SOURCE FILE Test HAVE___THREAD succeded with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec601440764/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec601440764.dir/build.make CMakeFiles/cmTryCompileExec601440764.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2609090824/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2609090824.dir/build.make CMakeFiles/cmTryCompileExec2609090824.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec601440764.dir/src.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE -DHAVE___THREAD   -o CMakeFiles/cmTryCompileExec601440764.dir/src.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTryCompileExec601440764
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec601440764.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DHAVE___THREAD    CMakeFiles/cmTryCompileExec601440764.dir/src.c.o  -o cmTryCompileExec601440764 -rdynamic -lm 
+Building C object CMakeFiles/cmTryCompileExec2609090824.dir/src.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE -DHAVE___THREAD   -o CMakeFiles/cmTryCompileExec2609090824.dir/src.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec2609090824
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2609090824.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DHAVE___THREAD    CMakeFiles/cmTryCompileExec2609090824.dir/src.c.o  -o cmTryCompileExec2609090824 -rdynamic -lm 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 Source file was:
@@ -1063,15 +1062,15 @@ __thread int x = 0; int main() { return 0; }
 Determining if the function clock_gettime exists passed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1065802816/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1065802816.dir/build.make CMakeFiles/cmTryCompileExec1065802816.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4020210363/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4020210363.dir/build.make CMakeFiles/cmTryCompileExec4020210363.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1065802816.dir/CheckFunctionExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTryCompileExec1065802816.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1065802816
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1065802816.dir/link.txt --verbose=1
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTryCompileExec1065802816.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1065802816 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec4020210363.dir/CheckFunctionExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTryCompileExec4020210363.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4020210363
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4020210363.dir/link.txt --verbose=1
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc   -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTryCompileExec4020210363.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4020210363 -rdynamic 
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 
 

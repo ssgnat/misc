@@ -1,20 +1,20 @@
 Determining if the _isnan exist failed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1735478839/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1735478839.dir/build.make CMakeFiles/cmTryCompileExec1735478839.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec560622280/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec560622280.dir/build.make CMakeFiles/cmTryCompileExec560622280.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1735478839.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1735478839.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Building C object CMakeFiles/cmTryCompileExec560622280.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec560622280.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_isnan’ undeclared (first use in this function)
    return ((int*)(&_isnan))[argc];
                    ^~~~~~
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec1735478839.dir/CheckSymbolExists.c.o] 错误 1
-make: *** [cmTryCompileExec1735478839/fast] 错误 2
+make[1]: *** [CMakeFiles/cmTryCompileExec560622280.dir/CheckSymbolExists.c.o] 错误 1
+make: *** [cmTryCompileExec560622280/fast] 错误 2
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -34,20 +34,20 @@ int main(int argc, char** argv)
 Determining if the _finite exist failed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1856951096/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1856951096.dir/build.make CMakeFiles/cmTryCompileExec1856951096.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1927359891/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1927359891.dir/build.make CMakeFiles/cmTryCompileExec1927359891.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1856951096.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1856951096.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Building C object CMakeFiles/cmTryCompileExec1927359891.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1927359891.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_finite’ undeclared (first use in this function)
    return ((int*)(&_finite))[argc];
                    ^~~~~~~
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec1856951096.dir/CheckSymbolExists.c.o] 错误 1
-make: *** [cmTryCompileExec1856951096/fast] 错误 2
+make[1]: *** [CMakeFiles/cmTryCompileExec1927359891.dir/CheckSymbolExists.c.o] 错误 1
+make: *** [cmTryCompileExec1927359891/fast] 错误 2
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -67,20 +67,20 @@ int main(int argc, char** argv)
 Determining if the _doprnt exist failed with the following output:
 Change Dir: /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1157701768/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1157701768.dir/build.make CMakeFiles/cmTryCompileExec1157701768.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1724680511/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1724680511.dir/build.make CMakeFiles/cmTryCompileExec1724680511.dir/build
 make[1]: 正在进入目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
 /usr/local/bin/cmake -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1157701768.dir/CheckSymbolExists.c.o
-/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1157701768.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Building C object CMakeFiles/cmTryCompileExec1724680511.dir/CheckSymbolExists.c.o
+/home/tangshishan/arm-himix200-linux/bin/arm-himix200-linux-gcc  -D_GNU_SOURCE  -o CMakeFiles/cmTryCompileExec1724680511.dir/CheckSymbolExists.c.o   -c /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_doprnt’ undeclared (first use in this function)
    return ((int*)(&_doprnt))[argc];
                    ^~~~~~~
 /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
 make[1]:正在离开目录 `/home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec1157701768.dir/CheckSymbolExists.c.o] 错误 1
-make: *** [cmTryCompileExec1157701768/fast] 错误 2
+make[1]: *** [CMakeFiles/cmTryCompileExec1724680511.dir/CheckSymbolExists.c.o] 错误 1
+make: *** [cmTryCompileExec1724680511/fast] 错误 2
 
 File /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */

@@ -43,17 +43,17 @@ LDFLAGS := -lpthread
 LDFLAGS += -lhzbus
 LDFLAGS += -lubox
 LDFLAGS += -lblobmsg_json
-LDFLAGS += -L../../bin/lib
+LDFLAGS += -L../../lib
 LDFLAGS += -L../../../../../conduit/
 
 ## Implict Section: change the following only when necessary.
 ##=============================================================================
 # The C program compiler. Uncomment it to specify yours explicitly.
 #CC = gcc
-CC = gcc
-STRIP = strip
-#CC = arm-himix200-linux-gcc
-#STRIP = arm-himix200-linux-strip
+#CC = gcc
+#STRIP = strip
+CC = arm-himix200-linux-gcc
+STRIP = arm-himix200-linux-strip
 
 # The C++ program compiler. Uncomment it to specify yours explicitly.
 #CXX = g++

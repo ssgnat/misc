@@ -59,10 +59,10 @@ CMAKE_BINARY_DIR = /home/tangshishan/tmp/misc/linux/c/ipc/bus/build
 # Target rules for target CMakeFiles/cli.dir
 
 # All Build rule for target.
-CMakeFiles/cli.dir/all: libubox/CMakeFiles/blobmsg_json_s.dir/all
-CMakeFiles/cli.dir/all: CMakeFiles/hzbus.dir/all
 CMakeFiles/cli.dir/all: libubox/CMakeFiles/ubox.dir/all
+CMakeFiles/cli.dir/all: CMakeFiles/hzbus.dir/all
 CMakeFiles/cli.dir/all: libubox/json/CMakeFiles/json-c.dir/all
+CMakeFiles/cli.dir/all: libubox/CMakeFiles/blobmsg_json_s.dir/all
 	$(MAKE) -f CMakeFiles/cli.dir/build.make CMakeFiles/cli.dir/depend
 	$(MAKE) -f CMakeFiles/cli.dir/build.make CMakeFiles/cli.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles  3
@@ -454,10 +454,10 @@ ubus_conduit/preinstall:
 # Target rules for target ubus_conduit/CMakeFiles/conduit_cli.dir
 
 # All Build rule for target.
-ubus_conduit/CMakeFiles/conduit_cli.dir/all: CMakeFiles/hzbus.dir/all
-ubus_conduit/CMakeFiles/conduit_cli.dir/all: libubox/CMakeFiles/blobmsg_json.dir/all
 ubus_conduit/CMakeFiles/conduit_cli.dir/all: libubox/CMakeFiles/ubox.dir/all
+ubus_conduit/CMakeFiles/conduit_cli.dir/all: CMakeFiles/hzbus.dir/all
 ubus_conduit/CMakeFiles/conduit_cli.dir/all: libubox/json/CMakeFiles/json-c.dir/all
+ubus_conduit/CMakeFiles/conduit_cli.dir/all: libubox/CMakeFiles/blobmsg_json.dir/all
 	$(MAKE) -f ubus_conduit/CMakeFiles/conduit_cli.dir/build.make ubus_conduit/CMakeFiles/conduit_cli.dir/depend
 	$(MAKE) -f ubus_conduit/CMakeFiles/conduit_cli.dir/build.make ubus_conduit/CMakeFiles/conduit_cli.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles  4
@@ -492,10 +492,10 @@ clean: ubus_conduit/CMakeFiles/conduit_cli.dir/clean
 # Target rules for target ubus_conduit/CMakeFiles/conduit_srv.dir
 
 # All Build rule for target.
-ubus_conduit/CMakeFiles/conduit_srv.dir/all: CMakeFiles/hzbus.dir/all
-ubus_conduit/CMakeFiles/conduit_srv.dir/all: libubox/CMakeFiles/blobmsg_json.dir/all
 ubus_conduit/CMakeFiles/conduit_srv.dir/all: libubox/CMakeFiles/ubox.dir/all
+ubus_conduit/CMakeFiles/conduit_srv.dir/all: CMakeFiles/hzbus.dir/all
 ubus_conduit/CMakeFiles/conduit_srv.dir/all: libubox/json/CMakeFiles/json-c.dir/all
+ubus_conduit/CMakeFiles/conduit_srv.dir/all: libubox/CMakeFiles/blobmsg_json.dir/all
 	$(MAKE) -f ubus_conduit/CMakeFiles/conduit_srv.dir/build.make ubus_conduit/CMakeFiles/conduit_srv.dir/depend
 	$(MAKE) -f ubus_conduit/CMakeFiles/conduit_srv.dir/build.make ubus_conduit/CMakeFiles/conduit_srv.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tangshishan/tmp/misc/linux/c/ipc/bus/build/CMakeFiles  5

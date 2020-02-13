@@ -1,1 +1,1 @@
-/usr/bin/gcc -fPIC   -shared -Wl,-soname,libconduit_srv.so -o libconduit_srv.so CMakeFiles/conduit_srv.dir/conduit_server.c.o  -L/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/../bin/lib -Wl,-rpath,/home/tangss/tmp/misc/linux/c/ipc/bus/ubus_conduit/../bin/lib -lhzbus -lubox -lblobmsg_json 
+/usr/bin/cc  -fPIC    -shared -Wl,-soname,libconduit_srv.so -o libconduit_srv.so CMakeFiles/conduit_srv.dir/conduit_server.c.o -lhzbus -lubox -lblobmsg_json 

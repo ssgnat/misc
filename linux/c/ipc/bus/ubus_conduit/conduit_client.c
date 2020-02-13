@@ -184,7 +184,7 @@ _send_request_command(const char *module, const char *method,
 {
     uint32_t id;
     int ret = 0;
-    struct blob_buf tmp;
+    static struct blob_buf tmp;
 
     if (_ubus_context == NULL) {
         LOGE("_ubus_context is null\n");

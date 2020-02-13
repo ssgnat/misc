@@ -2,7 +2,10 @@
 # It must be specified.
 # PROGRAM := a.out # the executable name
 PROGRAM := $(NAME)
-CMPLER := arm-linux-androideabi-
+#CMPLER := arm-linux-androideabi-
+CMPLER := arm-himix200-linux-
+#ANDROID := 1 
+LINUX := 1
 
 # The directories in which source files reside.
 # At least one path should be specified.
@@ -39,15 +42,24 @@ CFLAGS += -I../../../../cmockery/src/google/
 CXXFLAGS :=
 
 # The library and the link options ( C and C++ common ).
-LDFLAGS := -landroid
+
+ifdef ANDROID
+	LDFLAGS := -landroid
+	LDFLAGS += -lm -llog
+endif
+
+ifdef LINUX
+	LDFLAGS += -lpthread
+endif
+
 LDFLAGS += -lhzbus
 LDFLAGS += -lblobmsg_json
-LDFLAGS += -L../../bin/lib
+LDFLAGS += -ljson-c
+LDFLAGS += -L../../lib
 
 #ifdef ANDROID
 LDFLAGS += -lubox
 LDFLAGS += -lc
-LDFLAGS += -lm -llog
 LDFLAGS += -L../../../../../conduit/
 #endif
 
